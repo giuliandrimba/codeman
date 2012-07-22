@@ -1,2 +1,6 @@
 public/toaster/*
 public/toaster/app-debug,js
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
