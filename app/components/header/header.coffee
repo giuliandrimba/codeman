@@ -15,6 +15,7 @@ class Header
 	Line = app.components.header.els.Line
 	Brain = app.components.header.els.Brain
 	LogoLabel = app.components.header.els.LogoLabel
+	BrainArrow = app.components.header.els.BrainArrow
 
 	config:->
 		#shortcuts
@@ -24,12 +25,13 @@ class Header
 
 		#variables
 		@assets_loaded = 0
-		@total_assets = Object.keys(@Assets.header).length
+		@total_assets = Object.keys(@Assets.header.images).length + Object.keys(@Assets.header.animations).length
 		@bg
 		@splatter_logos
 		@logo
 		@splatter_top
 		@top_stripe
+		@brain_arrow
 		@brain
 		@logo_label
 		@drop_01 = new Drop 60, 140, 1
@@ -42,7 +44,7 @@ class Header
 		@top_line_03 = new Line 807, 0, 160, "#000", false
 		@top_line_04 = new Line 823, 0, 130, "#000", false
 		@label_line_01 = new Line 210, 57, 110, "#ee1d23"
-		@label_line_02 = new Line 246, 75, 50, "#ee1d23"
+		@label_line_02 = new Line 266, 75, 50, "#ee1d23"
 
 		#events
 		@loaded = new signals.Signal
@@ -77,6 +79,7 @@ class Header
 		@label_line_01.add_at @stage
 		@label_line_02.add_at @stage
 		@add_child @logo_label
+		@add_child @brain_arrow
 		@add_child @brain
 		@add_child @logo
 		@drop_line.add_at @stage
@@ -120,8 +123,12 @@ class Header
 	load_all_assets:(callback)->
 
 		#LOAD IMAGES
+
 		@load_image @image_assets.bg, (img)=>
 			@bg = new Background img
+
+		@load_image @image_assets.brain_arrow, (img)=>
+			@brain_arrow = new BrainArrow img
 
 		@load_image @image_assets.top_stripe, (img)=>
 			@top_stripe = new TopStripe img
