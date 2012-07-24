@@ -16,6 +16,9 @@ class Header
 	Brain = app.components.header.els.Brain
 	LogoLabel = app.components.header.els.LogoLabel
 	BrainArrow = app.components.header.els.BrainArrow
+	Quote = app.components.header.els.Quote
+	Symbols = app.components.header.els.Symbols
+	AnimText = app.components.header.els.AnimText
 
 	config:->
 		#shortcuts
@@ -34,6 +37,14 @@ class Header
 		@brain_arrow
 		@brain
 		@logo_label
+		@symbols
+		@quote
+		@quote_text = document.createElement "p"
+		@text_top = new AnimText "C:CODEMAN/WEBSITE", "#000"
+		@text_logo = new AnimText "CREATIVE CODER"
+		@bit_text_01 = new AnimText "011010101101101001", "#e54c6b"
+		@bit_text_02 = new AnimText "011010101101101001", "#e54c6b"
+		@bit_text_03 = new AnimText "011010101101101001", "#e54c6b"
 		@drop_01 = new Drop 60, 140, 1
 		@drop_02 = new Drop 43, 122, 0.6
 		@drop_03 = new Drop 90, 125, 0.6
@@ -43,8 +54,8 @@ class Header
 		@top_line_02 = new Line 775, 0, 80, "#ee1d23"
 		@top_line_03 = new Line 807, 0, 160, "#000", false
 		@top_line_04 = new Line 823, 0, 130, "#000", false
-		@label_line_01 = new Line 210, 57, 110, "#ee1d23"
-		@label_line_02 = new Line 266, 75, 50, "#ee1d23"
+		@label_line_01 = new Line 210, 57, 160, "#ee1d23"
+		@label_line_02 = new Line 266, 95, 50, "#ee1d23"
 
 		#events
 		@loaded = new signals.Signal
@@ -70,8 +81,7 @@ class Header
 			@start_in_queue()
 		), 300
 
-	start_in_queue:->
-
+	config_index:->
 		@add_child @bg
 		@add_child @splatter_logo
 		@add_child @splatter_top
@@ -80,6 +90,9 @@ class Header
 		@label_line_02.add_at @stage
 		@add_child @logo_label
 		@add_child @brain_arrow
+		@add_child @bit_text_03
+		@add_child @bit_text_01
+		@add_child @bit_text_02
 		@add_child @brain
 		@add_child @logo
 		@drop_line.add_at @stage
@@ -88,7 +101,34 @@ class Header
 		@top_line_02.add_at @stage
 		@top_line_03.add_at @stage
 		@top_line_04.add_at @stage
+		@add_child @symbols
+		@add_child @quote
+		@add_child @text_top
+		@add_child @text_logo
 
+		@text_top.x = 140
+		@text_top.y = 25
+
+		@text_logo.x = 257
+		@text_logo.y = 90
+
+		@bit_text_01.x = 150
+		@bit_text_01.y = 165
+
+		@bit_text_02.x = 150
+		@bit_text_02.y = 182
+
+		@bit_text_03.x = 358
+		@bit_text_03.y = 175
+
+		@quote_text.className = "quote"
+		@quote_text.innerText = "Real programmers don't comment their code. It was hard to write, it should be hard to understand. "
+
+		@canvas.parentNode.appendChild @quote_text
+
+	start_in_queue:->
+
+		@config_index()
 
 		@add_el @splatter_logo
 
@@ -123,6 +163,12 @@ class Header
 	load_all_assets:(callback)->
 
 		#LOAD IMAGES
+
+		@load_image @image_assets.symbols, (img)=>
+			@symbols = new Symbols img
+
+		@load_image @image_assets.quote, (img)=>
+			@quote = new Quote img
 
 		@load_image @image_assets.bg, (img)=>
 			@bg = new Background img
