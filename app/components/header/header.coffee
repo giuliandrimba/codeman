@@ -147,6 +147,16 @@ class Header
 		@label_line_02.in()
 		@drop_line.in()
 
+		@text_top.in()
+
+		@text_logo.in()
+
+		@bit_text_01.in()
+
+		@bit_text_02.in()
+
+		@bit_text_03.in()
+
 		@add_el @brain
 		@add_el @logo
 
