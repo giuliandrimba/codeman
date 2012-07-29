@@ -12169,7 +12169,6 @@ var theoricus = {};
 // ROOT
 (function() {__t('app').root = '/main';}).call( this );
 
-document.write('<scri'+'pt src="/toaster/app/components/header/els/anim_letter.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/string_util.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/route.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/object_util.js"></scr'+'ipt>')
@@ -12182,6 +12181,7 @@ document.write('<scri'+'pt src="/toaster/app/libs/es5.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/mvc/controller.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/config/app_config.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/config/assets.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/components/header/els/anim_letter.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/components/header/els/anim_text.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/components/header/els/background.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/components/header/els/brain.js"></scr'+'ipt>')
