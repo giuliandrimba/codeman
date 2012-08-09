@@ -27,7 +27,6 @@ class Intro
 		@_in()
 
 	_in:->
-		console.log @commands[current_in]
 		@commands[current_in].in()
 
 	_next_in:=>
@@ -36,7 +35,6 @@ class Intro
 
 	_el_ready:=>
 		@els_ready++
-		console.log "loaded #{@els_ready} | total #{@total_els}"
 		if @els_ready is @total_els
 			@ready.dispatch()
 			@_in() if can_run

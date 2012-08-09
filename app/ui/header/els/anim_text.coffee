@@ -13,6 +13,8 @@ class AnimText extends app.ui.header.els.base.BasicText
 
 	constructor:(text,color, x, y)->
 		super()
+		@x = x
+		@y = y
 		@initialize text, "12px OCRAStdRegular", color
 		@text = ""
 		@anim_letters = []
@@ -22,11 +24,16 @@ class AnimText extends app.ui.header.els.base.BasicText
 		@total = @anim_letters.length
 
 	in:->
-		@stage.addChild @
-		console.log "ADD TEXT"
+		delay = (Math.random() * 700) + 1800
 
-		@tween =>
-			console.log "DONE"
+		@stage.addChild @
+
+		setTimeout (=>
+			@tween()
+		), delay
+
+		# @tween =>
+		# 	console.log "DONE"
 		
 		@_done()
 

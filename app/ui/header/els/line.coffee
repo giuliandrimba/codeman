@@ -23,6 +23,14 @@ class Line extends app.ui.header.els.base.BasicEl
 
 	in:()->
 		@stage.addChild @shape
+		delay = Math.random() * 200
+		
+		setTimeout (=>
+			@tick()
+			@_done()
+		), delay
+
+	tick:->
 		Ticker.addListener @drawLine
 
 	drawLine:=>
@@ -37,4 +45,3 @@ class Line extends app.ui.header.els.base.BasicEl
 
 	finished:->
 		Ticker.removeListener @drawLine
-		@_done()

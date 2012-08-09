@@ -1,6 +1,6 @@
 class AnimLetter
 
-	_alphabet : ["a","b","c","d","e","f","s","e","x","j","k","l","n","o","w","p","q","$"]
+	_alphabet : ["a","b","c","d","e","f","s","e","x","j","k","l","$"]
 	_iteration : 0
 	_delay = 0
 	_completed:false
@@ -19,9 +19,9 @@ class AnimLetter
 		@last_pos = @txt_letters.length - 1
 		@txt_letters[@last_pos] = @letter
 
+		Ticker.addListener @
 
 		@tick = =>
-			@ticker = window.requestAnimationFrame @tick
 
 			if @_iteration >= (@_alphabet.length - @_delay) and !@_completed
 				@_completed = true
@@ -31,7 +31,6 @@ class AnimLetter
 				@txt_letters = @txt.text.split("")
 				@txt_letters[@last_pos] = @letter
 				@txt.text = @txt_letters.join("").toUpperCase()
-				window.cancelAnimationFrame @ticker
 				return
 
 			@change()

@@ -26,19 +26,27 @@ class Drop extends app.ui.header.els.base.BitmapEl
 		@drop_bg.init()
 
 	in:()->
+
+		delay = (Math.random() * 700) + 1300
+
 		@stage.addChild @drop_bg
+		@drop_bg.alpha = 0
 		@drop_bg.x = @x + 5
-		@drop_bg.y = @y + 5
+		@drop_bg.y = @y - 15
 		@drop_bg.scaleX = @drop_bg.scaleY = @scale
 
+		Tween.get(@drop_bg).wait(delay).to({alpha:1,y:@y + 5}, 500, Ease.quadOut);
+
 		@stage.addChild @drop
+		@drop.alpha = 0
 		@drop.x = @x
-		@drop.y = @y
+		@drop.y = @y - 15
 		@drop.scaleX = @drop.scaleY = @scale
+
+		Tween.get(@drop).wait(delay).to({alpha:1,y:@y}, 500, Ease.quadOut);
 
 		@_done()
 
 	_asset_ready:=>
 		@_assets_ready += 1
-		console.log "drop #{@_assets_ready} #{@assets}"
 		@ready.dispatch() if @_assets_ready is @assets

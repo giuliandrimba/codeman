@@ -9,9 +9,12 @@ class Brain extends app.ui.header.els.base.AnimEl
 
 	in:()->
 		@stage.addChild @
+		@alpha = 0
 		@x = 177
 		@y = 90
 		@gotoAndStop 1
+
+		Tween.get(@).wait(1000).to({alpha:1}, 500, Ease.quadOut);
 
 		@onAnimationEnd = (anim, name)->
 			anim.paused = true
@@ -19,7 +22,7 @@ class Brain extends app.ui.header.els.base.AnimEl
 
 		interval = setInterval((=>
 			@gotoAndPlay "blink"
-		), 5000)
+		), 20000)
 
 		@_done()
 		
