@@ -1,9 +1,9 @@
 #<< app/views/app_view
-#<< app/components/header/header
+#<< app/ui/header/header
 
 class IndexView extends app.views.AppView
 
-	Header = app.components.header.Header
+	Header = app.ui.header.Header
 
 	config:->
 		@header = new Header "header_canvas"
