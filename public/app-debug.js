@@ -12158,7 +12158,7 @@ var app = {};
 var theoricus = {};
 
 // TEMPLATES
-(function() {__t('app').templates = { 'main-index': function (locals, attrs, escape, rethrow) {var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;var buf = [];with (locals || {}) {var interp;buf.push('<div');buf.push(attrs({ "class": ('wrapper') }, {}));buf.push('><header><canvas');buf.push(attrs({ 'id':('header_canvas'), 'width':("1120"), 'height':("190") }, {"width":true,"height":true}));buf.push('>canvas</canvas></header></div>');}return buf.join("");} };}).call( this );
+(function() {__t('app').templates = { 'main-index': function (locals, attrs, escape, rethrow) {var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;var buf = [];with (locals || {}) {var interp;buf.push('<div');buf.push(attrs({ "class": ('wrapper') }, {}));buf.push('><header><canvas');buf.push(attrs({ 'id':('header_canvas'), 'width':("1120"), 'height':("200") }, {"width":true,"height":true}));buf.push('>canvas</canvas><div');buf.push(attrs({ 'id':('menu') }, {}));buf.push('><ul><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_about") }, {"href":true,"id":true}));buf.push('>About</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_work") }, {"href":true,"id":true}));buf.push('>Work</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_labs") }, {"href":true,"id":true}));buf.push('>Labs</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_codes") }, {"href":true,"id":true}));buf.push('>Codes</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_contact") }, {"href":true,"id":true}));buf.push('>Contact</a></li></ul></div></header></div>');}return buf.join("");} };}).call( this );
 
 // CONFIG
 (function() {__t('app').config = {animate_at_startup: false,enable_auto_transitions: true};}).call( this );
@@ -12171,6 +12171,7 @@ var theoricus = {};
 
 document.write('<scri'+'pt src="/toaster/theoricus/utils/string_util.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/route.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/ui/menu/menu.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/object_util.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/router.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/array_util.js"></scr'+'ipt>')

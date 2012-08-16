@@ -17,10 +17,12 @@
       this.alpha = 0;
       this.x = 870;
       this.y = -300;
-      Tween.get(this).wait(2000).to({
+      TweenLite.to(this, 3.5, {
+        alpha: 1,
         y: 0,
-        alpha: 1
-      }, 3500, Ease.quartInOut);
+        ease: Quart.easeInOut,
+        delay: 2
+      });
       return this._done();
     };
 

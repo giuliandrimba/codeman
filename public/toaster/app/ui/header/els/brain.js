@@ -20,9 +20,11 @@
       this.x = 177;
       this.y = 90;
       this.gotoAndStop(1);
-      Tween.get(this).wait(1000).to({
-        alpha: 1
-      }, 500, Ease.quadOut);
+      TweenLite.to(this, .5, {
+        alpha: 1,
+        ease: Quad.easeOut,
+        delay: 1
+      });
       this.onAnimationEnd = function(anim, name) {
         anim.paused = true;
         return anim.currentAnimationFrame = anim.spriteSheet.getNumFrames() - 1;

@@ -10,5 +10,6 @@ class Background extends app.ui.header.els.base.BitmapEl
 	in:(callback)->
 		@stage.addChild @
 		@alpha = 0
-		Tween.get(@).to({alpha:1}, 1000, Ease.quadOut);
+		# Tween.get(@).to({alpha:1}, 1000, Ease.quadOut);
+		TweenLite.to(@, 1, {alpha:1, ease:Quad.easeOut});
 		@_done()

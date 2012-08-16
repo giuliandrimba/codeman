@@ -15,9 +15,10 @@
     Background.prototype["in"] = function(callback) {
       this.stage.addChild(this);
       this.alpha = 0;
-      Tween.get(this).to({
-        alpha: 1
-      }, 1000, Ease.quadOut);
+      TweenLite.to(this, 1, {
+        alpha: 1,
+        ease: Quad.easeOut
+      });
       return this._done();
     };
 

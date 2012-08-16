@@ -13,5 +13,5 @@ class BrainArrow extends app.ui.header.els.base.BitmapEl
 		@x = 190
 		@y = 66
 
-		Tween.get(@).wait(1000).to({alpha:1}, 500, Ease.quadOut);
+		TweenLite.to(@, .5, {alpha:1, ease:Quad.easeOut, delay:1});
 		@_done()

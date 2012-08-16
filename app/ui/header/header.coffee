@@ -1,9 +1,5 @@
-#<< app/config/*
 #<< app/ui/header/els/*
 #<< app/ui/header/intro
-
-# Conventions
-# ss = spritesheets
 
 class Header
 
@@ -24,6 +20,9 @@ class Header
 	AnimText = app.ui.header.els.AnimText
 
 	constructor:(canvas_id)->
+
+		@ready = new signals.Signal
+
 		@canvas = document.getElementById canvas_id
 		@stage = new Stage @canvas
 		Ticker.setFPS 30
@@ -36,7 +35,7 @@ class Header
 		@intro.add new Line 775, 0, 80, "#ee1d23"
 		@intro.add new Line 807, 0, 160, "#000", false
 		@intro.add new Line 823, 0, 130, "#000", false
-		@intro.add new Line 210, 57, 160, "#ee1d23"
+		@intro.add new Line 210, 57, 150, "#ee1d23"
 		@intro.add new Line 266, 95, 50, "#ee1d23"
 		@intro.add new AnimText "011010101101101001", "#e54c6b", 358, 175
 		@intro.add new AnimText "011010101101101001", "#e54c6b", 150, 165
@@ -56,7 +55,13 @@ class Header
 		@intro.add new Drop 66, 100, 0.7
 		@intro.add new Symbols
 		@intro.add new Quote
-		@intro.run()
+
+		@intro.ready.add @on_ready
 
 	in:->
+		@intro.run()
+
+	on_ready:=>
+		@ready.dispatch()
+
 		

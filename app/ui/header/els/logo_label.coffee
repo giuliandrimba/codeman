@@ -13,7 +13,7 @@ class LogoLabel extends app.ui.header.els.base.BitmapEl
 		@x = 209
 		@y = 100
 
-		Tween.get(@).wait(1300).to({alpha:1}, 500, Ease.quadOut);
+		TweenLite.to(@, .5, {alpha:1, ease:Quad.easeOut, delay:1.3});
 
 		@_done()
 

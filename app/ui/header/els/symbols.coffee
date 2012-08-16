@@ -13,7 +13,7 @@ class Symbols extends app.ui.header.els.base.BitmapEl
 		@x = 650
 		@y = 10
 
-		Tween.get(@).wait(1000).to({alpha:1}, 500, Ease.quadOut);
+		TweenLite.to(@, .5, {alpha:1, ease:Quad.easeOut, delay:1});
 		
 		@_done()
 		

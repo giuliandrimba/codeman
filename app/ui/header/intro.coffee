@@ -9,6 +9,7 @@ class Intro
 		@commands = []
 		@total_els = 0
 		@els_ready = 0
+
 		@ready = new signals.Signal
 
 	add:(el)->

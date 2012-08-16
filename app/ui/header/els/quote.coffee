@@ -13,6 +13,6 @@ class Quote extends app.ui.header.els.base.BitmapEl
 		@x = 870
 		@y = -300
 
-		Tween.get(@).wait(2000).to({y:0,alpha:1}, 3500, Ease.quartInOut);
+		TweenLite.to(@, 3.5, {alpha:1,y:0, ease:Quart.easeInOut, delay:2});
 
 		@_done()

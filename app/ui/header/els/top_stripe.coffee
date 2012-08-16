@@ -11,5 +11,5 @@ class TopStripe extends app.ui.header.els.base.BitmapEl
 		@stage.addChild @
 		@x = 100
 		@alpha = 0
-		Tween.get(@).to({alpha:1}, 500, Ease.quadOut);
+		TweenLite.to(@, .5, {alpha:1, ease:Quad.easeOut});
 		@_done()

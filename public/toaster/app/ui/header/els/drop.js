@@ -36,26 +36,30 @@
     };
 
     Drop.prototype["in"] = function() {
-      var delay;
-      delay = (Math.random() * 700) + 1300;
+      var _delay;
+      _delay = (Math.random() * .7) + 1.3;
       this.stage.addChild(this.drop_bg);
       this.drop_bg.alpha = 0;
       this.drop_bg.x = this.x + 5;
       this.drop_bg.y = this.y - 15;
       this.drop_bg.scaleX = this.drop_bg.scaleY = this.scale;
-      Tween.get(this.drop_bg).wait(delay).to({
+      TweenLite.to(this.drop_bg, .5, {
         alpha: 1,
-        y: this.y + 5
-      }, 500, Ease.quadOut);
+        y: this.y + 5,
+        ease: Quad.easeOut,
+        delay: _delay
+      });
       this.stage.addChild(this.drop);
       this.drop.alpha = 0;
       this.drop.x = this.x;
       this.drop.y = this.y - 15;
       this.drop.scaleX = this.drop.scaleY = this.scale;
-      Tween.get(this.drop).wait(delay).to({
+      TweenLite.to(this.drop, .5, {
         alpha: 1,
-        y: this.y
-      }, 500, Ease.quadOut);
+        y: this.y,
+        ease: Quad.easeOut,
+        delay: _delay
+      });
       return this._done();
     };
 

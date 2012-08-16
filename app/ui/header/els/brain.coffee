@@ -14,7 +14,7 @@ class Brain extends app.ui.header.els.base.AnimEl
 		@y = 90
 		@gotoAndStop 1
 
-		Tween.get(@).wait(1000).to({alpha:1}, 500, Ease.quadOut);
+		TweenLite.to(@, .5, {alpha:1, ease:Quad.easeOut, delay:1});
 
 		@onAnimationEnd = (anim, name)->
 			anim.paused = true

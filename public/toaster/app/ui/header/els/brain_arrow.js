@@ -17,9 +17,11 @@
       this.alpha = 0;
       this.x = 190;
       this.y = 66;
-      Tween.get(this).wait(1000).to({
-        alpha: 1
-      }, 500, Ease.quadOut);
+      TweenLite.to(this, .5, {
+        alpha: 1,
+        ease: Quad.easeOut,
+        delay: 1
+      });
       return this._done();
     };
 

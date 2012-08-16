@@ -16,9 +16,10 @@
       this.stage.addChild(this);
       this.x = 100;
       this.alpha = 0;
-      Tween.get(this).to({
-        alpha: 1
-      }, 500, Ease.quadOut);
+      TweenLite.to(this, .5, {
+        alpha: 1,
+        ease: Quad.easeOut
+      });
       return this._done();
     };
 

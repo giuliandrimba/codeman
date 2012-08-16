@@ -27,7 +27,7 @@ class Drop extends app.ui.header.els.base.BitmapEl
 
 	in:()->
 
-		delay = (Math.random() * 700) + 1300
+		_delay = (Math.random() * .7) + 1.3
 
 		@stage.addChild @drop_bg
 		@drop_bg.alpha = 0
@@ -35,7 +35,7 @@ class Drop extends app.ui.header.els.base.BitmapEl
 		@drop_bg.y = @y - 15
 		@drop_bg.scaleX = @drop_bg.scaleY = @scale
 
-		Tween.get(@drop_bg).wait(delay).to({alpha:1,y:@y + 5}, 500, Ease.quadOut);
+		TweenLite.to(@drop_bg, .5, {alpha:1, y:@y + 5, ease:Quad.easeOut, delay:_delay});
 
 		@stage.addChild @drop
 		@drop.alpha = 0
@@ -43,7 +43,7 @@ class Drop extends app.ui.header.els.base.BitmapEl
 		@drop.y = @y - 15
 		@drop.scaleX = @drop.scaleY = @scale
 
-		Tween.get(@drop).wait(delay).to({alpha:1,y:@y}, 500, Ease.quadOut);
+		TweenLite.to(@drop, .5, {alpha:1, y:@y, ease:Quad.easeOut, delay:_delay});
 
 		@_done()
 

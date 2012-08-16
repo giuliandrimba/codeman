@@ -1,4 +1,5 @@
 (function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   __t('app.ui.header').Header = (function() {
     var AnimText, Background, Brain, BrainArrow, Drop, Intro, Line, Logo, LogoLabel, Quote, SplatterLogo, SplatterTop, Symbols, TopStripe;
@@ -32,6 +33,8 @@
     AnimText = app.ui.header.els.AnimText;
 
     function Header(canvas_id) {
+      this.on_ready = __bind(this.on_ready, this);
+      this.ready = new signals.Signal;
       this.canvas = document.getElementById(canvas_id);
       this.stage = new Stage(this.canvas);
       Ticker.setFPS(30);
@@ -43,7 +46,7 @@
       this.intro.add(new Line(775, 0, 80, "#ee1d23"));
       this.intro.add(new Line(807, 0, 160, "#000", false));
       this.intro.add(new Line(823, 0, 130, "#000", false));
-      this.intro.add(new Line(210, 57, 160, "#ee1d23"));
+      this.intro.add(new Line(210, 57, 150, "#ee1d23"));
       this.intro.add(new Line(266, 95, 50, "#ee1d23"));
       this.intro.add(new AnimText("011010101101101001", "#e54c6b", 358, 175));
       this.intro.add(new AnimText("011010101101101001", "#e54c6b", 150, 165));
@@ -63,10 +66,16 @@
       this.intro.add(new Drop(66, 100, 0.7));
       this.intro.add(new Symbols);
       this.intro.add(new Quote);
-      this.intro.run();
+      this.intro.ready.add(this.on_ready);
     }
 
-    Header.prototype["in"] = function() {};
+    Header.prototype["in"] = function() {
+      return this.intro.run();
+    };
+
+    Header.prototype.on_ready = function() {
+      return this.ready.dispatch();
+    };
 
     return Header;
 
