@@ -10,6 +10,20 @@
       return AppView.__super__.constructor.apply(this, arguments);
     }
 
+    AppView.prototype.preloader = {
+      show: function() {
+        return $("#preloader").css("display", "block");
+      },
+      hide: function() {
+        return $("#preloader").css("display", "none");
+      }
+    };
+
+    AppView.prototype.update_scroll = function() {
+      $(".wrapper").find(".viewport").height(window.height());
+      return $(".wrapper").tinyscrollbar_update();
+    };
+
     return AppView;
 
   })(theoricus.mvc.View);

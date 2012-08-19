@@ -2,5 +2,52 @@
 @import "_header"
 
 .wrapper
-	width 1120px
+	width 1020px
 	margin 0 auto
+
+.wrapper .viewport 
+	width 1020px 
+	height 600px 
+	overflow hidden 
+	position relative
+
+.wrapper .overview 
+	list-style none 
+	position absolute 
+	left 0 
+	top 0 
+	padding 0 
+	margin 0
+
+.wrapper .scrollbar
+	background #e5e5e5 no-repeat 0 0 
+	position absolute 
+	background-position 0 0 
+	top 5px
+	right 5px 
+	width 8px
+	border-radius 20px
+
+.wrapper .track
+	background #e5e5e5 url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100% 
+	height 100% 
+	width 8px 
+	position relative 
+	padding 0 1px
+	border-radius 20px
+
+.wrapper .thumb
+	background #ccc
+	height 20px 
+	width 8px 
+	cursor pointer 
+	overflow hidden 
+	position absolute 
+	top 0
+	border-radius 20px
+
+.wrapper .thumb .end
+	display none
+
+.wrapper .disable
+	display none

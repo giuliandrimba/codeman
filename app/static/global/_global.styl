@@ -5,3 +5,53 @@ global-reset()
 
 body
 	font-family font_normal
+	overflow hidden
+
+div.project_thumb
+	overflow hidden
+	width 236px
+	height 236px
+	position absolute
+	cursor pointer
+	top 0
+	left 0
+	opacity 0
+
+div.thumb_holder
+	width 236px
+	height 236px
+
+div.thumb_over
+	background #000
+	width 236px
+	height 236px
+	opacity 0
+	border-radius 5px
+	position absolute
+	z-index 1
+
+div.thumb_over:hover
+	opacity 0.6
+
+img.thumb_img
+	border-radius 5px
+
+ul.thumb_list li
+	width 236px
+	height 236px
+	position relative
+	display block
+	margin-left 20px
+	margin-bottom 20px
+	float left
+
+ul.thumb_list li.last
+	margin-left 0
+
+#preloader
+	position absolute
+	z-index 10
+	top 360px
+	left 50%
+	margin-left -88px
+	display none

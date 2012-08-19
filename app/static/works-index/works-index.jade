@@ -1,0 +1,17 @@
+//- put your templates (JADE) here 
+
+#works.page
+	ul.thumb_list
+		each item,i in data
+				if i % 4 == 0
+					li.last
+						a(href="#")
+							.project_thumb
+								.thumb_over
+								img(src="/images/works/studiosc-thumb.jpg", alt="Studio SC", class="thumb_img")
+				else
+					li
+						a(href="#")
+							.project_thumb
+								.thumb_over
+								img(src="/images/works/studiosc-thumb.jpg", alt="Studio SC", class="thumb_img")

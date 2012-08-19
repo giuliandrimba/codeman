@@ -12158,45 +12158,46 @@ var app = {};
 var theoricus = {};
 
 // TEMPLATES
-(function() {__t('app').templates = { 'main-index': function (locals, attrs, escape, rethrow) {var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;var buf = [];with (locals || {}) {var interp;buf.push('<div');buf.push(attrs({ "class": ('wrapper') }, {}));buf.push('><header><canvas');buf.push(attrs({ 'id':('header_canvas'), 'width':("1120"), 'height':("200") }, {"width":true,"height":true}));buf.push('>canvas</canvas><div');buf.push(attrs({ 'id':('menu') }, {}));buf.push('><ul><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_about") }, {"href":true,"id":true}));buf.push('>About</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_work") }, {"href":true,"id":true}));buf.push('>Work</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_labs") }, {"href":true,"id":true}));buf.push('>Labs</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_codes") }, {"href":true,"id":true}));buf.push('>Codes</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_contact") }, {"href":true,"id":true}));buf.push('>Contact</a></li></ul></div></header></div>');}return buf.join("");} };}).call( this );
+(function() {__t('app').templates = { 'main-index': function (locals, attrs, escape, rethrow) {var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;var buf = [];with (locals || {}) {var interp;buf.push('<div');buf.push(attrs({ "class": ('wrapper') }, {}));buf.push('><div');buf.push(attrs({ "class": ('scrollbar') }, {}));buf.push('><div');buf.push(attrs({ "class": ('track') }, {}));buf.push('><div');buf.push(attrs({ "class": ('thumb') }, {}));buf.push('><div');buf.push(attrs({ "class": ('end') }, {}));buf.push('></div></div></div></div><div');buf.push(attrs({ "class": ('viewport') }, {}));buf.push('><div');buf.push(attrs({ "class": ('overview') }, {}));buf.push('><img');buf.push(attrs({ 'src':("/images/preloader.gif"), 'id':("preloader") }, {"src":true,"id":true}));buf.push('/><header><canvas');buf.push(attrs({ 'id':('header_canvas'), 'width':("1020"), 'height':("200") }, {"width":true,"height":true}));buf.push('>canvas</canvas><div');buf.push(attrs({ 'id':('menu') }, {}));buf.push('><ul><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_about") }, {"href":true,"id":true}));buf.push('>About</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_work") }, {"href":true,"id":true}));buf.push('>Work</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_labs") }, {"href":true,"id":true}));buf.push('>Labs</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_codes") }, {"href":true,"id":true}));buf.push('>Codes</a></li><li><a');buf.push(attrs({ 'href':('#'), 'id':("bt_contact") }, {"href":true,"id":true}));buf.push('>Contact</a></li></ul></div></header><div');buf.push(attrs({ 'id':('page_content') }, {}));buf.push('></div></div></div></div>');}return buf.join("");},'works-index': function (locals, attrs, escape, rethrow) {var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;var buf = [];with (locals || {}) {var interp;buf.push('<div');buf.push(attrs({ 'id':('works'), "class": ('page') }, {}));buf.push('><ul');buf.push(attrs({ "class": ('thumb_list') }, {}));buf.push('>');;(function(){  if ('number' == typeof data.length) {    for (var i = 0, $l = data.length; i < $l; i++) {      var item = data[i];if ( i % 4 == 0){buf.push('<li');buf.push(attrs({ "class": ('last') }, {}));buf.push('><a');buf.push(attrs({ 'href':("#") }, {"href":true}));buf.push('><div');buf.push(attrs({ "class": ('project_thumb') }, {}));buf.push('><div');buf.push(attrs({ "class": ('thumb_over') }, {}));buf.push('></div><img');buf.push(attrs({ 'src':("/images/works/studiosc-thumb.jpg"), 'alt':("Studio SC"), "class": ("thumb_img") }, {"src":true,"alt":true,"class":true}));buf.push('/></div></a></li>');}else{buf.push('<li><a');buf.push(attrs({ 'href':("#") }, {"href":true}));buf.push('><div');buf.push(attrs({ "class": ('project_thumb') }, {}));buf.push('><div');buf.push(attrs({ "class": ('thumb_over') }, {}));buf.push('></div><img');buf.push(attrs({ 'src':("/images/works/studiosc-thumb.jpg"), 'alt':("Studio SC"), "class": ("thumb_img") }, {"src":true,"alt":true,"class":true}));buf.push('/></div></a></li>');}    }  } else {    for (var i in data) {      var item = data[i];if ( i % 4 == 0){buf.push('<li');buf.push(attrs({ "class": ('last') }, {}));buf.push('><a');buf.push(attrs({ 'href':("#") }, {"href":true}));buf.push('><div');buf.push(attrs({ "class": ('project_thumb') }, {}));buf.push('><div');buf.push(attrs({ "class": ('thumb_over') }, {}));buf.push('></div><img');buf.push(attrs({ 'src':("/images/works/studiosc-thumb.jpg"), 'alt':("Studio SC"), "class": ("thumb_img") }, {"src":true,"alt":true,"class":true}));buf.push('/></div></a></li>');}else{buf.push('<li><a');buf.push(attrs({ 'href':("#") }, {"href":true}));buf.push('><div');buf.push(attrs({ "class": ('project_thumb') }, {}));buf.push('><div');buf.push(attrs({ "class": ('thumb_over') }, {}));buf.push('></div><img');buf.push(attrs({ 'src':("/images/works/studiosc-thumb.jpg"), 'alt':("Studio SC"), "class": ("thumb_img") }, {"src":true,"alt":true,"class":true}));buf.push('/></div></a></li>');}   }  }}).call(this);buf.push('</ul></div>');}return buf.join("");} };}).call( this );
 
 // CONFIG
 (function() {__t('app').config = {animate_at_startup: false,enable_auto_transitions: true};}).call( this );
 
 // ROUTES
-(function() {__t('app').routes = {'/main': {to: 'main/index',at: null,el: 'body'}};}).call( this );
+(function() {__t('app').routes = {'/main': {to: 'main/index',at: null,el: 'body'},'/works': {to: 'works/index',at: '/main',el: '#page_content'}};}).call( this );
 
 // ROOT
-(function() {__t('app').root = '/main';}).call( this );
+(function() {__t('app').root = '/works';}).call( this );
 
 document.write('<scri'+'pt src="/toaster/theoricus/utils/string_util.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/route.js"></scr'+'ipt>')
-document.write('<scri'+'pt src="/toaster/app/ui/menu/menu.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/object_util.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/libs/utils.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/router.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/utils/array_util.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/mvc/view.js"></scr'+'ipt>')
-document.write('<scri'+'pt src="/toaster/theoricus/mvc/model.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/base/bitmap_el.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/theoricus/mvc/model.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/base/basic_text.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/libs/data.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/libs/es5.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/mvc/controller.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/config/app_config.js"></scr'+'ipt>')
-document.write('<scri'+'pt src="/toaster/app/config/assets.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/controllers/app_controller.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/controllers/main_controller.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/controllers/works_controller.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/models/app_model.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/models/main_model.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/models/works_model.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/anim_letter.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/anim_text.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/background.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/ui/header/intro.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/base/anim_el.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/base/basic_el.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/brain.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/brain_arrow.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/drop.js"></scr'+'ipt>')
-document.write('<scri'+'pt src="/toaster/app/ui/header/intro.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/line.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/logo.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/els/logo_label.js"></scr'+'ipt>')
@@ -12208,8 +12209,10 @@ document.write('<scri'+'pt src="/toaster/app/ui/header/els/top_stripe.js"></scr'
 document.write('<scri'+'pt src="/toaster/app/ui/header/header.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/utils/load_animation.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/ui/header/utils/load_image.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/ui/menu/menu.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/views/app_view.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/app/views/main/index_view.js"></scr'+'ipt>')
+document.write('<scri'+'pt src="/toaster/app/views/works/index_view.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/config/config.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/factory.js"></scr'+'ipt>')
 document.write('<scri'+'pt src="/toaster/theoricus/core/processes.js"></scr'+'ipt>')

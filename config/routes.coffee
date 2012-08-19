@@ -4,5 +4,10 @@ match "/main"
 	at: null
 	el: "body"
 
+match "/works"
+	to: "works/index"
+	at: "/main"
+	el: "#page_content"
+
 # DEFAULT ROUTE
-root "/main"
+root "/works"

@@ -10,6 +10,8 @@
 
     function IndexView() {
       this.on_header_ready = __bind(this.on_header_ready, this);
+
+      this["in"] = __bind(this["in"], this);
       return IndexView.__super__.constructor.apply(this, arguments);
     }
 
@@ -17,11 +19,24 @@
 
     Menu = app.ui.menu.Menu;
 
+    IndexView.prototype.set_triggers = function() {
+      var _this = this;
+      return $(window).resize((function() {
+        $(".wrapper").find(".viewport").height(window.height());
+        return $(".wrapper").tinyscrollbar_update();
+      }));
+    };
+
     IndexView.prototype["in"] = function(done) {
+      var _this = this;
       this.header = new Header("header_canvas");
       this.header.ready.add(this.on_header_ready);
       this.header["in"]();
-      return this.menu = new Menu("#menu");
+      this.menu = new Menu("#menu");
+      $('.wrapper').tinyscrollbar();
+      return this.menu.showed.add(function() {
+        return typeof done === "function" ? done() : void 0;
+      });
     };
 
     IndexView.prototype.on_header_ready = function() {
