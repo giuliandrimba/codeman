@@ -38,7 +38,7 @@
       if (this.content.height() < $(window).height()) {
         return this.footer.css("top", window.height() - footer_height);
       } else {
-        return this.footer.css("top", this.content.height() + footer_height);
+        return this.footer.css("top", this.content.height());
       }
     };
 

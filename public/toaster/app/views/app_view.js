@@ -27,15 +27,15 @@
     AppView.prototype["in"] = function() {
       var footer_height;
       this.content = $(".wrapper").find(".content");
-      if (this.content.height() < window.height()) {
-        this.content.height(window.height());
-      }
       this.footer = $("footer");
       footer_height = this.footer.height();
+      if (this.content.height() < window.height()) {
+        this.content.height(window.height() - footer_height);
+      }
       if (this.content.height() < $(window).height()) {
         return this.footer.css("top", window.height() - footer_height);
       } else {
-        return this.footer.css("top", this.content.height() + footer_height);
+        return this.footer.css("top", this.content.height());
       }
     };
 

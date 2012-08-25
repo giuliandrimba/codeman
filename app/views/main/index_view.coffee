@@ -25,7 +25,7 @@ class IndexView extends app.views.AppView
 		if @content.height() < $(window).height()
 			@footer.css("top",window.height() - footer_height)
 		else
-			@footer.css("top",@content.height() + footer_height)
+			@footer.css("top",@content.height())
 
 
 	in:(done)=>

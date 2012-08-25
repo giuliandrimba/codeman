@@ -14,12 +14,13 @@ class AppView extends theoricus.mvc.View
 
 	in:->
 		@content = $(".wrapper").find(".content")
-		@content.height(window.height()) if @content.height() < window.height()
 
 		@footer = $("footer")
 		footer_height = @footer.height()
 
+		@content.height(window.height() - footer_height) if @content.height() < window.height()
+
 		if @content.height() < $(window).height()
 			@footer.css("top",window.height() - footer_height)
 		else
-			@footer.css("top",@content.height() + footer_height)
+			@footer.css("top",@content.height())
