@@ -21,20 +21,43 @@
 
     IndexView.prototype.set_triggers = function() {
       var _this = this;
+      this.viewport = this.wrapper.find(".viewport");
+      this.content = this.wrapper.find(".content");
+      this.viewport.height(window.height());
+      this._footer_pos();
       return $(window).resize((function() {
-        $(".wrapper").find(".viewport").height(window.height());
-        return $(".wrapper").tinyscrollbar_update();
+        _this.viewport.height(window.height());
+        _this.wrapper.tinyscrollbar_update();
+        return _this._footer_pos();
       }));
+    };
+
+    IndexView.prototype._footer_pos = function() {
+      var footer_height;
+      footer_height = this.footer.height();
+      if (this.content.height() < $(window).height()) {
+        return this.footer.css("top", window.height() - footer_height);
+      } else {
+        return this.footer.css("top", this.content.height() + footer_height);
+      }
     };
 
     IndexView.prototype["in"] = function(done) {
       var _this = this;
+      this.footer = $("footer");
       this.header = new Header("header_canvas");
       this.header.ready.add(this.on_header_ready);
       this.header["in"]();
+      this.wrapper = $('.wrapper');
       this.menu = new Menu("#menu");
-      $('.wrapper').tinyscrollbar();
+      this.wrapper.tinyscrollbar();
       return this.menu.showed.add(function() {
+        TweenLite.to(_this.footer, .5, {
+          css: {
+            opacity: 1
+          },
+          delay: 2
+        });
         return typeof done === "function" ? done() : void 0;
       });
     };

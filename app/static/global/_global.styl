@@ -22,7 +22,6 @@ div.thumb_holder
 	height 236px
 
 div.thumb_over
-	background #000
 	width 236px
 	height 236px
 	opacity 0
@@ -30,8 +29,36 @@ div.thumb_over
 	position absolute
 	z-index 1
 
+div.thumb_over .bg
+	background #000
+	width 236px
+	height 236px
+	opacity .5
+	border-radius 5px
+	position absolute
+	z-index 1
+
+div.thumb_over p
+	position relative
+	color #fff
+	font-family: 'MetaCondBookRoman';
+	font-size 18px
+	z-index 2
+	text-align center
+	top 50%
+	opacity 0
+
+
 div.thumb_over:hover
-	opacity 0.6
+	transition-property opacity
+	transition-duration .5s
+	opacity 1;
+
+div.thumb_over:hover p
+	transition-property opacity, margin-top
+	transition-duration .5s, .5s
+	opacity 1
+	margin-top -15px
 
 img.thumb_img
 	border-radius 5px

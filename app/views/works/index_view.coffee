@@ -22,6 +22,7 @@ class IndexView extends app.views.AppView
 		)
 
 	in:(done)->
+		super()
 		@update_scroll()
 		@before_in()
 

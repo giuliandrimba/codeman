@@ -36,6 +36,7 @@
 
     IndexView.prototype["in"] = function(done) {
       var _this = this;
+      IndexView.__super__["in"].call(this);
       this.update_scroll();
       this.before_in();
       return this.load(function() {
