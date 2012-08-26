@@ -10,6 +10,8 @@
       return WorksModel.__super__.constructor.apply(this, arguments);
     }
 
+    WorksModel.service_url = "http://codeman-admin.herokuapp.com/services/works/giuliandrimba";
+
     return WorksModel;
 
   })(app.models.AppModel);

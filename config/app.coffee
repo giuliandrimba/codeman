@@ -2,7 +2,7 @@
 animate_at_startup = false
 
 # enables / disables auto fadein-fadeout as transitions
-enable_auto_transitions = true
+enable_auto_transitions = false
 
 # vendors
 vendors = []

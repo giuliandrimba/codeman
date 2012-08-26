@@ -25,6 +25,12 @@
       this.content = this.wrapper.find(".content");
       this.viewport.height(window.height());
       this._footer_pos();
+      this.el.find("a").click(function(ev) {
+        _this.navigate($(ev.currentTarget).attr("href"));
+        if (!_this.the.config.no_push_state) {
+          return ev.preventDefault();
+        }
+      });
       return $(window).resize((function() {
         _this.viewport.height(window.height());
         _this.wrapper.tinyscrollbar_update();

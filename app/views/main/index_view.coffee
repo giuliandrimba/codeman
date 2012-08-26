@@ -13,6 +13,10 @@ class IndexView extends app.views.AppView
 		@viewport.height(window.height())
 		@_footer_pos()
 
+		@el.find( "a" ).click ( ev )=>
+			@navigate $( ev.currentTarget ).attr "href"
+			ev.preventDefault() unless @the.config.no_push_state
+
 		$(window).resize (=>
 			@viewport.height(window.height())
 			@wrapper.tinyscrollbar_update()

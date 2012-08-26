@@ -9,5 +9,10 @@ match "/works"
 	at: "/main"
 	el: "#page_content"
 
+match "/works/:id"
+	to: "works/show"
+	at: "/main"
+	el: "#page_content"
+
 # DEFAULT ROUTE
 root "/works"

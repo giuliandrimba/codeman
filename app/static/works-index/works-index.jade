@@ -3,17 +3,17 @@
 		each item,i in data
 				if i % 4 == 0
 					li.last
-						a(href="#")
+						a(href="/works/#{item.id}")
 							.project_thumb
 								.thumb_over
 									.bg
-									p StudioSC
-								img(src="/images/works/studiosc-thumb.jpg", alt="Studio SC", class="thumb_img")
+									p #{item.name}
+								img(src="#{item.thumbnail}", alt="#{item.name}", class="thumb_img")
 				else
 					li
-						a(href="#")
+						a(href="/works/#{item.id}")
 							.project_thumb
 								.thumb_over
 									.bg
-									p StudioSC
-								img(src="/images/works/studiosc-thumb.jpg", alt="Studio SC", class="thumb_img")
+									p #{item.name}
+								img(src="#{item.thumbnail}", alt="#{item.name}", class="thumb_img")

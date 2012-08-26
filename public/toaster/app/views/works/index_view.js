@@ -24,6 +24,16 @@
       return this.preloader.show();
     };
 
+    IndexView.prototype.set_triggers = function() {
+      var _this = this;
+      return this.el.find("a").click(function(ev) {
+        _this.navigate($(ev.currentTarget).attr("href"));
+        if (!_this.the.config.no_push_state) {
+          return ev.preventDefault();
+        }
+      });
+    };
+
     IndexView.prototype.load = function(done) {
       var _this = this;
       return this.thumbs.find("img").load((function() {
@@ -61,6 +71,33 @@
         }
         return typeof done === "function" ? done() : void 0;
       });
+    };
+
+    IndexView.prototype.out = function(done) {
+      var delay, i, thumb, time, _i, _len, _ref, _results,
+        _this = this;
+      delay = 0;
+      time = 0.5;
+      _ref = this.thumbs;
+      _results = [];
+      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+        thumb = _ref[i];
+        delay += .05;
+        time += .06;
+        _results.push(TweenLite.to($(thumb), time, {
+          css: {
+            opacity: 0,
+            top: 150,
+            left: 0
+          },
+          delay: delay,
+          ease: Quad.easeOut,
+          onComplete: function() {
+            return typeof done === "function" ? done() : void 0;
+          }
+        }));
+      }
+      return _results;
     };
 
     return IndexView;
