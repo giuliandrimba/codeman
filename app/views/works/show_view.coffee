@@ -3,6 +3,7 @@
 class ShowView extends app.views.AppView
 
 	in:(done)->
+		super()
 		done?()
 
 	out:(done)->

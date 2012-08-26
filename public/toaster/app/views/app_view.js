@@ -25,18 +25,23 @@
     };
 
     AppView.prototype["in"] = function() {
-      var footer_height;
+      var content_height, footer_height;
       this.content = $(".wrapper").find(".content");
+      this.page_content = $("#page_content");
       this.footer = $("footer");
       footer_height = this.footer.height();
-      if (this.content.height() < window.height()) {
+      content_height = this.page_content.height() + $("header").height() + footer_height;
+      if (content_height < window.height()) {
         this.content.height(window.height() - footer_height);
+      } else {
+        this.content.height(content_height + footer_height);
       }
       if (this.content.height() < $(window).height()) {
-        return this.footer.css("top", window.height() - footer_height);
+        this.footer.css("top", window.height() - footer_height);
       } else {
-        return this.footer.css("top", this.content.height());
+        this.footer.css("top", this.content.height() - footer_height);
       }
+      return this.update_scroll();
     };
 
     return AppView;

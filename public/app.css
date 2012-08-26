@@ -19,6 +19,27 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'MetaBookRoman';
+  src: url("fonts/metabook-roman-webfont.eot");
+  src: url("fonts/metabook-roman-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/metabook-roman-webfont.woff") format('woff'), url("fonts/metabook-roman-webfont.ttf") format('truetype'), url("fonts/metabook-roman-webfont.svg#meta_bookroman") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MetaBookItalic';
+  src: url("fonts/metabook-italic-webfont.eot");
+  src: url("fonts/metabook-italic-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/metabook-italic-webfont.woff") format('woff'), url("fonts/metabook-italic-webfont.ttf") format('truetype'), url("fonts/metabook-italic-webfont.svg#meta_bookitalic") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MetaRomanBold';
+  src: url("fonts/metaboldlf-roman-webfont.eot");
+  src: url("fonts/metaboldlf-roman-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/metaboldlf-roman-webfont.woff") format('woff'), url("fonts/metaboldlf-roman-webfont.ttf") format('truetype'), url("fonts/metaboldlf-roman-webfont.svg#meta_lfroman_bold") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body,
 div,
@@ -110,9 +131,30 @@ td {
 a img {
   border: none;
 }
+a:hover {
+  text-decoration: none;
+}
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: 'MetaBookRoman';
+}
+strong {
+  font-family: 'MetaRomanBold';
+}
 body {
   font-family: 'MetaNormalRoman', sans-serif;
   overflow: hidden;
+}
+span.line {
+  width: 25px;
+  height: 1px;
+  display: block;
+  background: #000;
+}
+.clear {
+  clear: both;
 }
 div.project_thumb {
   overflow: hidden;
@@ -308,7 +350,6 @@ footer .wrapper_footer p {
   width: 1020px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
   position: relative;
 }
 .wrapper .scrollbar {
@@ -356,3 +397,104 @@ footer .wrapper_footer p {
   margin-top: 25px;
 }
 
+.works_inner h3 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.works_inner span.line {
+  float: left;
+  margin-top: 9px;
+  margin-right: 5px;
+  display: block;
+}
+.works_inner .head .bt_launch {
+  float: right;
+  font-size: 15px;
+  color: #000;
+  font-family: 'MetaBookItalic';
+  margin-right: 25px;
+}
+.works_inner .head p {
+  float: left;
+  font-family: 'MetaBookItalic';
+  font-size: 14px;
+}
+.works_inner .works_gallery {
+  margin-top: 25px;
+}
+.works_inner .works_gallery nav {
+  height: 12px;
+  margin-bottom: 5px;
+}
+.works_inner .works_gallery nav ul li {
+  float: left;
+  width: 330px;
+  height: 10px;
+  background: #fff;
+  border-top: 1px #e45e7e solid;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.works_inner .works_gallery nav ul li:hover {
+  height: 10px;
+  background: #fff;
+  border-top: 5px #ccc solid;
+  margin-top: -2px;
+}
+.works_inner .works_gallery .slide {
+  position: relative;
+}
+.works_inner .works_gallery .slide .images {
+  width: 1000px;
+  height: 555px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 9px #888;
+}
+.works_inner .works_gallery .arrow {
+  width: 27px;
+  height: 62px;
+  background: #000 url("/images/bg-arrow.png") no-repeat top left;
+  position: absolute;
+  background-position: 0;
+  cursor: pointer;
+  top: 227px;
+}
+.works_inner .works_gallery .left_arrow {
+  left: -13px;
+}
+.works_inner .works_gallery .right_arrow {
+  right: 6px;
+}
+.works_inner .works_gallery .arrow:hover {
+  transition-property: background-position;
+  transition-duration: 5s;
+  background-position: -27px;
+}
+.works_inner .works_gallery .arrow img {
+  margin-top: 22px;
+  margin-left: 7px;
+}
+.works_inner .text {
+  margin-top: 40px;
+}
+.works_inner .description,
+.works_inner .credits {
+  width: 660px;
+  display: block;
+  float: left;
+  margin-top: 3px;
+}
+.works_inner .description p,
+.works_inner .credits p {
+  font-size: 12px;
+  font-family: 'MetaBookRoman';
+}
+.works_inner .credits p.title {
+  font-size: 14px;
+  font-family: 'MetaRomanBold';
+  margin-bottom: 15px;
+}
+.works_inner .text .block {
+  margin-bottom: 20px;
+}

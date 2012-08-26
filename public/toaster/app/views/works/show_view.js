@@ -11,6 +11,7 @@
     }
 
     ShowView.prototype["in"] = function(done) {
+      ShowView.__super__["in"].call(this);
       return typeof done === "function" ? done() : void 0;
     };
 
