@@ -15,17 +15,20 @@
 
     WorksController.prototype.index = function() {
       var _this = this;
-      this.data = [1, 2, 3, 4, 5, 6, 7, 8];
       return WorksModel.load(function() {
-        console.log(WorksModel.all());
         return _this.render("index", {
           data: WorksModel.all()
         });
       });
     };
 
-    WorksController.prototype.show = function() {
-      return this.render("show", {});
+    WorksController.prototype.show = function(id) {
+      var _this = this;
+      return WorksModel.load(function() {
+        return _this.render("show", {
+          data: WorksModel.find(id)
+        });
+      });
     };
 
     return WorksController;

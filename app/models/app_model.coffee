@@ -15,7 +15,7 @@ class AppModel extends theoricus.mvc.Model
 
 		@records.push (record = new @() )
 		@props[key] = record[key] = val for key, val of atts
-		record.id = @records.length
+		# record.id = @records.length
 		record.klass = @
 		record
 

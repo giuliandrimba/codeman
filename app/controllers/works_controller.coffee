@@ -7,12 +7,9 @@ class WorksController extends app.controllers.AppController
 
 	index:->
 
-		@data = [1,2,3,4,5,6,7,8]
-
 		WorksModel.load =>
-			console.log WorksModel.all()
 			@render "index", data:WorksModel.all()
 
-	show:->
-
-		@render "show", {}
+	show:(id)->
+		WorksModel.load =>
+			@render "show", data:WorksModel.find id

@@ -32,7 +32,6 @@
         val = atts[key];
         this.props[key] = record[key] = val;
       }
-      record.id = this.records.length;
       record.klass = this;
       return record;
     };

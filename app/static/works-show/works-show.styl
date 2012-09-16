@@ -40,7 +40,7 @@
 		text-indent -9999px
 		cursor pointer
 
-	.works_gallery nav ul li:hover
+	.works_gallery nav ul li:hover, .works_gallery nav ul li.selected
 		height 10px
 		background #fff
 		border-top 5px #cccccc solid
@@ -51,10 +51,16 @@
 
 	.works_gallery .slide .images
 		width 1000px
-		height 555px
+		height 554px
 		border-radius 5px
 		overflow hidden
 		box-shadow: 0 3px 9px #888;
+
+	.works_gallery .slide .images img
+		border-radius 5px
+
+	.works_gallery .slide .images ul li
+		float left
 
 	.works_gallery .arrow
 		width 27px
@@ -64,6 +70,7 @@
 		background-position 0
 		cursor pointer
 		top 227px
+		z-index 2
 
 	.works_gallery .left_arrow
 		left -13px
@@ -92,6 +99,7 @@
 	.description p, .credits p
 		font-size 12px
 		font-family 'MetaBookRoman'
+		line-height 14px
 
 	.credits p.title
 		font-size 14px

@@ -14,5 +14,15 @@ match "/works/:id"
 	at: "/main"
 	el: "#page_content"
 
+match "/about"
+	to: "about/index"
+	at: "/main"
+	el: "#page_content"
+
+match "/contact"
+	to: "contact/index"
+	at: "/main"
+	el: "#page_content"
+
 # DEFAULT ROUTE
 root "/works"
