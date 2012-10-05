@@ -6,7 +6,6 @@ class WorksController extends app.controllers.AppController
 	WorksModel = app.models.WorksModel
 
 	index:->
-
 		WorksModel.load =>
 			@render "index", data:WorksModel.all()
 

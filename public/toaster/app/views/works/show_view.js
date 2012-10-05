@@ -15,7 +15,6 @@
 
     ShowView.prototype.before_in = function() {
       var gallery;
-      console.log(this.data);
       return gallery = new Gallery($(".works_gallery"), this.data.data.id);
     };
 

@@ -24,6 +24,7 @@ class AppModel extends theoricus.mvc.Model
 		@klass.records.splice (@find record_id), 1
 
 	# ACESSING
+	@clear:->@records = []
 	@all:-> @records
 	@first:-> @records[0]
 	@last:-> @records[ @records.length - 1 ]
@@ -39,6 +40,7 @@ class AppModel extends theoricus.mvc.Model
 
 	# LOADING
 	@load:(done)->
+
 		if @cache[@service_url]?
 			return done?()
 

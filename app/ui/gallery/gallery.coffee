@@ -16,6 +16,7 @@ class Gallery
 	constructor:(@el, @id)->
 		@_config()
 		GalleryModel.service_url = "http://codeman-admin.herokuapp.com/services/files/#{@id}"
+		GalleryModel.clear()
 		GalleryModel.load (data)=>
 			@_config_data()
 			@start()

@@ -40,6 +40,10 @@
       return this.klass.records.splice(this.find(record_id), 1);
     };
 
+    AppModel.clear = function() {
+      return this.records = [];
+    };
+
     AppModel.all = function() {
       return this.records;
     };

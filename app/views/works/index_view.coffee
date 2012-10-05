@@ -36,10 +36,8 @@ class IndexView extends app.views.AppView
 			delay = 0
 			time = 0.5
 			for thumb, i in @thumbs
-				# rndTime = (Math.random() * 1) + .5
 				delay += .05
 				time += .06
-				# TweenLite.to $(thumb), .5, {css:{opacity:1}}
 				TweenLite.to $(thumb), time, {css:{opacity:1,top:0,left:0},delay:delay,ease:Quad.easeOut}
 
 			done?()
@@ -50,10 +48,10 @@ class IndexView extends app.views.AppView
 		time = 0.5
 
 		for thumb, i in @thumbs
-				# rndTime = (Math.random() * 1) + .5
 				delay += .05
 				time += .06
-				# TweenLite.to $(thumb), .5, {css:{opacity:1}}
-				TweenLite.to $(thumb), time, {css:{opacity:0,top:150,left:0},delay:delay,ease:Quad.easeOut, onComplete: =>
-					done?()
-				}
+				TweenLite.to $(thumb), time, {css:{opacity:0,top:150,left:0},delay:delay,ease:Quad.easeOut}
+
+		setTimeout ( =>
+			done?()
+		), (time * 1000)

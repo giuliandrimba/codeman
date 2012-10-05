@@ -21,6 +21,7 @@
       this.id = id;
       this._config();
       GalleryModel.service_url = "http://codeman-admin.herokuapp.com/services/files/" + this.id;
+      GalleryModel.clear();
       GalleryModel.load(function(data) {
         _this._config_data();
         return _this.start();
