@@ -6,10 +6,6 @@
 
     __extends(AppView, _super);
 
-    function AppView() {
-      return AppView.__super__.constructor.apply(this, arguments);
-    }
-
     AppView.prototype.preloader = {
       show: function() {
         return $("#preloader").css("display", "block");
@@ -23,6 +19,11 @@
       $(".wrapper").find(".viewport").height(window.height());
       return $(".wrapper").tinyscrollbar_update();
     };
+
+    function AppView() {
+      AppView.__super__.constructor.call(this);
+      window.preloader = this.preloader;
+    }
 
     AppView.prototype["in"] = function() {
       var content_height, footer_height;

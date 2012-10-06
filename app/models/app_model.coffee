@@ -42,6 +42,7 @@ class AppModel extends theoricus.mvc.Model
 	@load:(done)->
 
 		if @cache[@service_url]?
+			@after_load @cache[@service_url] if @records.length <= 0
 			return done?()
 
 		$.ajax

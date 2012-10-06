@@ -15,6 +15,7 @@
 
     WorksController.prototype.index = function() {
       var _this = this;
+      window.preloader.show();
       return WorksModel.load(function() {
         return _this.render("index", {
           data: WorksModel.all()

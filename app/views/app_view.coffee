@@ -12,7 +12,12 @@ class AppView extends theoricus.mvc.View
 		$(".wrapper").find(".viewport").height(window.height())
 		$(".wrapper").tinyscrollbar_update()
 
+	constructor:->
+		super()
+		window.preloader = @preloader
+
 	in:->
+
 		@content = $(".wrapper").find(".content")
 		@page_content = $("#page_content");
 
