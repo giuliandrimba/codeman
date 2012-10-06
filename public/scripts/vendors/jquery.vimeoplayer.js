@@ -14,8 +14,6 @@
 	var iframe;
     var url;
 
-    var initiated = false;
-
 	if (window.addEventListener)
 	{
 	    window.addEventListener('message', onMessageReceived, false);
@@ -24,33 +22,19 @@
 	    window.attachEvent('onmessage', onMessageReceived, false);
 	}
 
-	function init()
-	{
-		iframe = this;
-		url = $(iframe).attr('src').split('?')[0]
-		initiated = true;
-	}
-
 	$.fn.vimeoplayer = function()
 	{
 		iframe = this;
 		url = iframe.attr('src').split('?')[0]
-		initiated = true;
 	}
 
 	$.fn.vimeoplayer.play = function()
 	{
-		if(!initiated)
-			init();
-
 		 post("play");
 	}
 
 	$.fn.vimeoplayer.pause = function()
 	{
-		if(!initiated)
-			init();
-
 		 post("pause");
 	}
 
@@ -106,7 +90,7 @@
 	        data.value = value;
 	    }
 	    
-	    iframe.contentWindow.postMessage(JSON.stringify(data), url);
+	    iframe[0].contentWindow.postMessage(JSON.stringify(data), url);
 	}
 
 })(jQuery);

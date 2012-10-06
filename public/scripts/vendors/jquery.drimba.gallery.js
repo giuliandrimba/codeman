@@ -82,11 +82,19 @@
 			}
 		}
 
+		function startVimeoVideos(id)
+		{
+			for(var i = 0; i < vimeoVideos.length; i++)
+			{
+				$("#vimeo_" + vimeoVideos[i]).vimeoplayer()
+			}
+		}
+
 		function stopVimeo()
 		{
 			for(var i = 0; i < vimeoVideos.length; i++)
 			{
-				$("#vimeo_" + i).vimeoplayer.pause();
+				$("#vimeo_" + vimeoVideos[i]).vimeoplayer.pause();
 			}
 		}
 
@@ -107,6 +115,7 @@
 			}
 
 			startYoutubeVideos();
+			startVimeoVideos();
 							
 			totalImages = list.find("li").length;
 			currentImage = 0;
