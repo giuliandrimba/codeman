@@ -27,7 +27,7 @@
 	function init()
 	{
 		iframe = this;
-		url = iframe.attr('src').split('?')[0]
+		url = $(iframe).attr('src').split('?')[0]
 		initiated = true;
 	}
 
