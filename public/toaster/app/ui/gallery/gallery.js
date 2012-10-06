@@ -58,6 +58,7 @@
         $(e.target).addClass("selected");
         return _this._check_bts();
       });
+      this._check_bts();
       return this.gallery.onChange = function(id) {
         var index;
         _this._reset_nav();

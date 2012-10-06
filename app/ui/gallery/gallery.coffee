@@ -45,6 +45,8 @@ class Gallery
 			@_check_bts()
 		)
 
+		@_check_bts()
+
 		@gallery.onChange = (id)=>
 			@_reset_nav()
 			index = @nav.find("##{id}").attr("id")

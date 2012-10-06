@@ -72,6 +72,9 @@
     AppModel.load = function(done) {
       var _this = this;
       if (this.cache[this.service_url] != null) {
+        if (this.records.length <= 0) {
+          this.after_load(this.cache[this.service_url]);
+        }
         return typeof done === "function" ? done() : void 0;
       }
       return $.ajax({

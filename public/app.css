@@ -520,6 +520,7 @@ footer .wrapper_footer p {
   cursor: pointer;
   top: 227px;
   z-index: 2;
+  display: none;
 }
 .works_inner .works_gallery .left_arrow {
   left: -13px;

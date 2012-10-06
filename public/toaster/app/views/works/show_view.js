@@ -15,13 +15,25 @@
 
     ShowView.prototype.before_in = function() {
       var gallery;
-      return gallery = new Gallery($(".works_gallery"), this.data.data.id);
+      gallery = new Gallery($(".works_gallery"), this.data.data.id);
+      return this.el.css({
+        opacity: 0
+      });
     };
 
     ShowView.prototype["in"] = function(done) {
+      var _this = this;
       ShowView.__super__["in"].call(this);
       this.before_in();
-      return typeof done === "function" ? done() : void 0;
+      return TweenLite.to(this.el, 0.5, {
+        css: {
+          opacity: 1
+        },
+        ease: Quad.easeOut,
+        onComplete: function() {
+          return typeof done === "function" ? done() : void 0;
+        }
+      });
     };
 
     ShowView.prototype.out = function(done) {

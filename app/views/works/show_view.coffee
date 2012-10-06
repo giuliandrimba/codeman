@@ -7,11 +7,14 @@ class ShowView extends app.views.AppView
 
 	before_in:->
 		gallery = new Gallery $(".works_gallery"), @data.data.id
+		@el.css({opacity:0})
 
 	in:(done)->
 		super()
 		@before_in()
-		done?()
+		TweenLite.to @el, 0.5, {css:{opacity:1}, ease:Quad.easeOut, onComplete:=>
+			done?()
+		}
 
 	out:(done)->
 		done?()
