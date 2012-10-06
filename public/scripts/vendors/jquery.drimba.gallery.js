@@ -16,18 +16,13 @@
 		var isYoutube = /(youtube).*v=(.*)\&?.*/
 		var isVimeo = /(vimeo).*\/(.*)/
 
+		var youtubeVideos = [];
+
 		function stopVideos()
 		{
 			if(hasVideo)
 			{
-				var iframes = list.find("iframe");
-
-				for(var i = 0; i < iframes.length; i++)
-				{
-					var oldSRC = $(iframes[i]).attr("src");
-					$(iframes[i]).attr("src","");
-					$(iframes[i]).attr("src",oldSRC);
-				}
+				$(".youtube_video").tubeplayer("pause");
 			}
 		}
 
@@ -57,7 +52,29 @@
 		function youtubeEmbed(id)
 		{
 			hasVideo = true;
-			return "<iframe width=\"1000\" height=\"554\" src=\"http://www.youtube.com/embed/" + id + "\" frameborder=\"0\" allowfullscreen></iframe>"
+			var el = "<div id='youtube_" + youtubeVideos.length  + "' class='youtube_video'></div>";
+			youtubeVideos.push(id);
+			return el;
+		}
+
+		function startYoutubeVideos(id)
+		{
+			for(var i = 0; i < youtubeVideos.length; i++)
+			{
+				$("#youtube_" + i).tubeplayer({
+					width: IMAGE_WIDTH, // the width of the player
+					height: 554, // the height of the player
+					allowFullScreen: "true", // true by default, allow user to go full screen
+					initialVideo: youtubeVideos[i], // the video that is loaded into the player
+					preferredQuality: "default",// preferred quality: default, small, medium, large, hd720
+					onPlay: function(id){}, // after the play method is called
+					onPause: function(){}, // after the pause method is called
+					onStop: function(){}, // after the player is stopped
+					onSeek: function(time){}, // after the video has been seeked to a defined point
+					onMute: function(){}, // after the player is muted
+					onUnMute: function(){} // after the player is unmuted
+				});
+			}
 		}
 
 		function vimeoEmbed(id)
@@ -74,6 +91,8 @@
 			{
 				list.append("<li>" + appendResource(data[i]) + "</li>");
 			}
+
+			startYoutubeVideos();
 							
 			totalImages = list.find("li").length;
 			currentImage = 0;
