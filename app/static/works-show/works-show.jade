@@ -6,8 +6,8 @@
 		span.line
 		p Screens
 
-
-		a(href="#{data.url}", target="_blank", class="bt_launch") Launch Project
+		- if (data.url)
+			a(href="#{data.url}", target="_blank", class="bt_launch") Launch Project
 
 	.clear
 

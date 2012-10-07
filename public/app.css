@@ -542,16 +542,16 @@ footer .wrapper_footer p {
 }
 .works_inner .description,
 .works_inner .credits {
-  width: 660px;
+  width: 980px;
   display: block;
   float: left;
   margin-top: 3px;
 }
 .works_inner .description p,
 .works_inner .credits p {
-  font-size: 12px;
+  font-size: 13px;
   font-family: 'MetaBookRoman';
-  line-height: 14px;
+  line-height: 16px;
 }
 .works_inner .credits p.title {
   font-size: 14px;

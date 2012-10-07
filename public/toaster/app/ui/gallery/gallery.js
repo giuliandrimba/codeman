@@ -94,7 +94,11 @@
       _results = [];
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
         item = _ref[i];
-        _results.push(list.append($("<li style='width:" + width + "px' id='" + i + "'></li>")));
+        if (this.data.length > 1) {
+          _results.push(list.append($("<li style='width:" + width + "px' id='" + i + "'></li>")));
+        } else {
+          _results.push(void 0);
+        }
       }
       return _results;
     };

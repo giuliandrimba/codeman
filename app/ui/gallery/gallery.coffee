@@ -74,7 +74,7 @@ class Gallery
 		list.empty()
 
 		for item, i in @data
-			list.append $("<li style='width:#{width}px' id='#{i}'></li>")
+			list.append $("<li style='width:#{width}px' id='#{i}'></li>") if @data.length > 1
 
 	start:->
 		@gallery = @el.find("ul.gallery").gallery()
