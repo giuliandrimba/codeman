@@ -10,7 +10,7 @@ class AppView extends theoricus.mvc.View
 
 	update_scroll:->
 		$(".wrapper").find(".viewport").height(window.height())
-		$(".wrapper").tinyscrollbar_update()
+		$(".wrapper").tinyscrollbar_update(0)
 
 	constructor:->
 		super()

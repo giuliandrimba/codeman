@@ -13,7 +13,7 @@ class IndexView extends app.views.AppView
 		@viewport.height(window.height())
 		@_footer_pos()
 
-		@el.find( "a" ).click ( ev )=>
+		@el.find( "a.bt" ).click ( ev )=>
 			@navigate $( ev.currentTarget ).attr "href"
 			ev.preventDefault() unless @the.config.no_push_state
 

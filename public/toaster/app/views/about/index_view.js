@@ -10,7 +10,12 @@
       return IndexView.__super__.constructor.apply(this, arguments);
     }
 
+    IndexView.prototype.before_in = function() {
+      return this.el.find(".description").html(this.data.data.description);
+    };
+
     IndexView.prototype["in"] = function(done) {
+      this.before_in();
       return typeof done === "function" ? done() : void 0;
     };
 

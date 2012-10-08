@@ -1,15 +1,18 @@
 #about
-	img(src="/images/about.png", class="img_about")
+	div.img_about
+		img(src="/images/about.png")
 
 	.about_desc
-		h1 GIULIAN DRIMBA
-		p.description #{data.description}
+		h3 Giulian Drimba - Interactive Developer
+		.description
 
 		h2 Skills
 
 		ul
 			- for (var i in data.skills)
 				li 
-					p #{data.skills[i].name} (#{data.skills[i].level})
+					p 
+						strong #{data.skills[i].name}: 
+						#{data.skills[i].level}
 
 	.clear

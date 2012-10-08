@@ -1,54 +1,66 @@
 #about {
   margin-top: 20px;
 }
-#about img.img_about {
+#about div.img_about {
   float: left;
+  width: 294px;
+  height: 344px;
+  display: block;
 }
 #about div.about_desc {
   margin-top: 30px;
   margin-left: 40px;
   float: left;
+  width: 650px;
 }
 #about p {
-  font-family: Arial;
-  font-size: 12px;
-  line-height: 14px;
-  color: #87827c;
+  font-family: 'MetaBookRoman', sans-serif;
 }
-#about p.description {
-  margin-top: 37px;
+#about p strong {
+  font-size: 13px;
+  font-family: 'MetaRomanBold';
+}
+#about div.description {
+  margin-top: 15px;
   margin-bottom: 25px;
-  width: 400px;
+  width: 650px;
+}
+#about div.description p {
+  margin-bottom: 10px;
 }
 #about h2 {
   margin-bottom: 15px;
-}
-#about ul {
-  list-style: disc;
-  margin-left: 20px;
+  font-family: 'MetaRomanBold';
 }
 #about ul li {
-  margin-bottom: 3px;
-  color: #87827c;
+  margin-bottom: 5px;
+  color: #000;
 }
 
 #contact {
   margin-top: 30px;
 }
-#contact img {
+#contact div.img_contact {
   float: left;
 }
 #contact div.description {
   float: left;
-  margin-top: 50px;
-  width: 400px;
+  margin-top: 20px;
+  width: 650px;
 }
 #contact p {
-  font-family: Arial;
-  font-size: 12px;
+  font-family: 'MetaBookRoman', sans-serif;
+}
+#contact h3 {
+  margin-bottom: 15px;
 }
 #contact strong {
-  font-family: font_normal;
+  font-family: 'MetaBookRoman', sans-serif;
+  font-weight: bold;
+}
+#contact ul li p {
+  font-size: 15px;
+  line-height: 17px;
 }
 
 @font-face {
@@ -187,6 +199,12 @@ a img {
 a:hover {
   text-decoration: none;
 }
+a {
+  color: #000;
+}
+h1 {
+  font-size: 25px;
+}
 h3 {
   font-size: 20px;
   text-transform: uppercase;
@@ -199,6 +217,11 @@ strong {
 body {
   font-family: 'MetaNormalRoman', sans-serif;
   overflow: hidden;
+}
+p {
+  font-size: 13px;
+  line-height: 16px;
+  color: #000;
 }
 span.line {
   width: 25px;

@@ -25,7 +25,7 @@
       this.content = this.wrapper.find(".content");
       this.viewport.height(window.height());
       this._footer_pos();
-      this.el.find("a").click(function(ev) {
+      this.el.find("a.bt").click(function(ev) {
         _this.navigate($(ev.currentTarget).attr("href"));
         if (!_this.the.config.no_push_state) {
           return ev.preventDefault();

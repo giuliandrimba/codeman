@@ -17,7 +17,7 @@
 
     AppView.prototype.update_scroll = function() {
       $(".wrapper").find(".viewport").height(window.height());
-      return $(".wrapper").tinyscrollbar_update();
+      return $(".wrapper").tinyscrollbar_update(0);
     };
 
     function AppView() {
