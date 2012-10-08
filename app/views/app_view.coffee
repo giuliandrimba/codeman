@@ -26,6 +26,8 @@ class AppView extends theoricus.mvc.View
 
 		content_height = @page_content.height() + $("header").height() + footer_height
 
+		console.log content_height
+
 		if content_height < window.height()
 			@content.height(window.height() - footer_height) 
 		else

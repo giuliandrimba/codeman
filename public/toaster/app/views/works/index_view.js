@@ -15,6 +15,9 @@
       this.thumbs = $(this.el).find(".thumb_list li .project_thumb");
       this._total_thumbs = this.thumbs.length;
       this._thumbs_loaded = 0;
+      this.el.css({
+        opacity: 1
+      });
       _ref = this.thumbs;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         thumb = _ref[_i];

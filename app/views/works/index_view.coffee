@@ -6,6 +6,7 @@ class IndexView extends app.views.AppView
 		@thumbs = $(@el).find(".thumb_list li .project_thumb")
 		@_total_thumbs = @thumbs.length
 		@_thumbs_loaded = 0
+		@el.css({opacity:1})
 
 		for thumb in @thumbs
 			rndTop = (Math.random() * 100) + 100

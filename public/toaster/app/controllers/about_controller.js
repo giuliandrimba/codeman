@@ -15,7 +15,9 @@
 
     AboutController.prototype.index = function() {
       var _this = this;
+      window.preloader.show();
       return AboutModel.load(function() {
+        window.preloader.hide();
         return _this.render("index", {
           data: AboutModel.first()
         });

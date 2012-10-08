@@ -17,4 +17,6 @@ class ShowView extends app.views.AppView
 		}
 
 	out:(done)->
-		done?()
+		TweenLite.to @el, 0.5, {css:{opacity:0}, ease:Quad.easeOut, onComplete:=>
+			done?()
+		}

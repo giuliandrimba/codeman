@@ -11,16 +11,38 @@
     }
 
     IndexView.prototype.before_in = function() {
-      return this.el.find(".description").html(this.data.data.description);
+      this.el.find(".description").html(this.data.data.description);
+      return this.el.css({
+        opacity: 0
+      });
     };
 
     IndexView.prototype["in"] = function(done) {
+      var _this = this;
+      IndexView.__super__["in"].call(this);
       this.before_in();
-      return typeof done === "function" ? done() : void 0;
+      return TweenLite.to(this.el, 0.5, {
+        css: {
+          opacity: 1
+        },
+        ease: Quad.easeOut,
+        onComplete: function() {
+          return typeof done === "function" ? done() : void 0;
+        }
+      });
     };
 
     IndexView.prototype.out = function(done) {
-      return typeof done === "function" ? done() : void 0;
+      var _this = this;
+      return TweenLite.to(this.el, 0.5, {
+        css: {
+          opacity: 0
+        },
+        ease: Quad.easeOut,
+        onComplete: function() {
+          return typeof done === "function" ? done() : void 0;
+        }
+      });
     };
 
     return IndexView;

@@ -32,6 +32,7 @@
       this.footer = $("footer");
       footer_height = this.footer.height();
       content_height = this.page_content.height() + $("header").height() + footer_height;
+      console.log(content_height);
       if (content_height < window.height()) {
         this.content.height(window.height() - footer_height);
       } else {
