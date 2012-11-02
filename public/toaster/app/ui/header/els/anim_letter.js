@@ -17,12 +17,15 @@
       this.letter = letter;
     }
 
-    AnimLetter.prototype.tween = function(txt, delay) {
+    AnimLetter.prototype.tween = function(txt, delay, init) {
       var _this = this;
       this._delay = delay;
       this.txt = txt;
+      if (init === true) {
+        this.txt.text = "";
+      }
       this.txt.text += this.letter;
-      this.txt_letters = txt.text.split("");
+      this.txt_letters = this.txt.text.split("");
       this.last_pos = this.txt_letters.length - 1;
       this.txt_letters[this.last_pos] = this.letter;
       Ticker.addListener(this);

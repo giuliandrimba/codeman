@@ -13,14 +13,19 @@ class AnimText extends app.ui.header.els.base.BasicText
 
 	constructor:(text,color, x, y)->
 		super()
+		@input_color = color
+		@input_text = text
 		@x = x
 		@y = y
-		@initialize text, "12px OCRAStdRegular", color
-		@text = ""
-		@anim_letters = []
+		@_init()
 
-		@anim_letters.push new AnimLetter(letter) for letter in text
-	
+	_init:=>
+		@initialize "", "12px OCRAStdRegular", @input_color
+		@anim_letters = []
+		@current = 0
+
+		@anim_letters.push new AnimLetter(letter) for letter in @input_text
+
 		@total = @anim_letters.length
 
 	in:->
@@ -29,19 +34,14 @@ class AnimText extends app.ui.header.els.base.BasicText
 		@stage.addChild @
 
 		setTimeout (=>
-			@tween()
+			@tween(true)
 		), delay
-
-		# @tween =>
-		# 	console.log "DONE"
 		
 		@_done()
 
-	tween:(done)->
-		@anim_letters[@current].tween(@,10).on_complete = =>
+	tween:(init)->
+		@anim_letters[@current].tween(@,10, init).on_complete = =>
 			@current++
 			if @current < @total
 				@tween() 
 				return
-
-			done?()

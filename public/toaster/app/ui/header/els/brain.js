@@ -31,7 +31,7 @@
       };
       interval = setInterval((function() {
         return _this.gotoAndPlay("blink");
-      }), 20000);
+      }), 10000);
       return this._done();
     };
 

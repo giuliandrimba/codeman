@@ -14,8 +14,17 @@
 
     img_bg = "/images/header/drop-bg.png";
 
-    function Drop(x, y, scale) {
+    Drop.prototype.angle = 1.1;
+
+    Drop.prototype.old_dist = 0;
+
+    function Drop(x, y, scale, stage) {
       this._asset_ready = __bind(this._asset_ready, this);
+
+      this._animDrop = __bind(this._animDrop, this);
+
+      this._animDropTicker = __bind(this._animDropTicker, this);
+      this.stage = stage;
       this.x = x;
       this.y = y;
       this.scale = scale;
@@ -45,7 +54,7 @@
       this.drop_bg.scaleX = this.drop_bg.scaleY = this.scale;
       TweenLite.to(this.drop_bg, .5, {
         alpha: 1,
-        y: this.y + 5,
+        y: this.y + 10,
         ease: Quad.easeOut,
         delay: _delay
       });
@@ -56,11 +65,22 @@
       this.drop.scaleX = this.drop.scaleY = this.scale;
       TweenLite.to(this.drop, .5, {
         alpha: 1,
-        y: this.y,
+        y: this.y + 5,
         ease: Quad.easeOut,
-        delay: _delay
+        delay: _delay,
+        onComplete: this._animDropTicker
       });
       return this._done();
+    };
+
+    Drop.prototype._animDropTicker = function() {
+      return Ticker.addListener(this._animDrop);
+    };
+
+    Drop.prototype._animDrop = function() {
+      this.drop.y = this.y + (Math.sin(this.angle) * 5);
+      this.drop_bg.y = (this.y + 5) + (Math.sin(this.angle) * 5);
+      return this.angle += .1;
     };
 
     Drop.prototype._asset_ready = function() {

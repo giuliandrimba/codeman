@@ -5,8 +5,11 @@ class Drop extends app.ui.header.els.base.BitmapEl
 	BitmapEl = app.ui.header.els.base.BitmapEl
 	img = "/images/header/drop.png"
 	img_bg = "/images/header/drop-bg.png"
+	angle : 1.1
+	old_dist:0
 
-	constructor:(x, y, scale)->
+	constructor:(x, y, scale, stage)->
+		@stage = stage
 		@x = x
 		@y = y
 		@scale = scale
@@ -35,7 +38,7 @@ class Drop extends app.ui.header.els.base.BitmapEl
 		@drop_bg.y = @y - 15
 		@drop_bg.scaleX = @drop_bg.scaleY = @scale
 
-		TweenLite.to(@drop_bg, .5, {alpha:1, y:@y + 5, ease:Quad.easeOut, delay:_delay});
+		TweenLite.to(@drop_bg, .5, {alpha:1, y:@y + 10, ease:Quad.easeOut, delay:_delay});
 
 		@stage.addChild @drop
 		@drop.alpha = 0
@@ -43,9 +46,17 @@ class Drop extends app.ui.header.els.base.BitmapEl
 		@drop.y = @y - 15
 		@drop.scaleX = @drop.scaleY = @scale
 
-		TweenLite.to(@drop, .5, {alpha:1, y:@y, ease:Quad.easeOut, delay:_delay});
+		TweenLite.to(@drop, .5, {alpha:1, y:@y + 5, ease:Quad.easeOut, delay:_delay, onComplete:@_animDropTicker});
 
 		@_done()
+
+	_animDropTicker:=>
+		Ticker.addListener @_animDrop
+
+	_animDrop:=>
+		@drop.y = @y + (Math.sin(@angle) * 5)
+		@drop_bg.y = (@y + 5) + (Math.sin(@angle) * 5)
+		@angle += .1
 
 	_asset_ready:=>
 		@_assets_ready += 1

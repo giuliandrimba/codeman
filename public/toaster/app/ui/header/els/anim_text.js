@@ -1,5 +1,6 @@
 (function() {
-  var __hasProp = {}.hasOwnProperty,
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   __t('app.ui.header.els').AnimText = (function(_super) {
@@ -20,19 +21,27 @@
     _added = false;
 
     function AnimText(text, color, x, y) {
-      var letter, _i, _len;
+      this._init = __bind(this._init, this);
       AnimText.__super__.constructor.call(this);
+      this.input_color = color;
+      this.input_text = text;
       this.x = x;
       this.y = y;
-      this.initialize(text, "12px OCRAStdRegular", color);
-      this.text = "";
+      this._init();
+    }
+
+    AnimText.prototype._init = function() {
+      var letter, _i, _len, _ref;
+      this.initialize("", "12px OCRAStdRegular", this.input_color);
       this.anim_letters = [];
-      for (_i = 0, _len = text.length; _i < _len; _i++) {
-        letter = text[_i];
+      this.current = 0;
+      _ref = this.input_text;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        letter = _ref[_i];
         this.anim_letters.push(new AnimLetter(letter));
       }
-      this.total = this.anim_letters.length;
-    }
+      return this.total = this.anim_letters.length;
+    };
 
     AnimText.prototype["in"] = function() {
       var delay,
@@ -40,20 +49,18 @@
       delay = (Math.random() * 700) + 1800;
       this.stage.addChild(this);
       setTimeout((function() {
-        return _this.tween();
+        return _this.tween(true);
       }), delay);
       return this._done();
     };
 
-    AnimText.prototype.tween = function(done) {
+    AnimText.prototype.tween = function(init) {
       var _this = this;
-      return this.anim_letters[this.current].tween(this, 10).on_complete = function() {
+      return this.anim_letters[this.current].tween(this, 10, init).on_complete = function() {
         _this.current++;
         if (_this.current < _this.total) {
           _this.tween();
-          return;
         }
-        return typeof done === "function" ? done() : void 0;
       };
     };
 

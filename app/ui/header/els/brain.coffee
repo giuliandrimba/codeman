@@ -22,7 +22,7 @@ class Brain extends app.ui.header.els.base.AnimEl
 
 		interval = setInterval((=>
 			@gotoAndPlay "blink"
-		), 20000)
+		), 10000)
 
 		@_done()
 		

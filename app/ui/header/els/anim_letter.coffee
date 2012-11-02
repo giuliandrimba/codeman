@@ -11,11 +11,12 @@ class AnimLetter
 	constructor:(letter)->
 		@letter = letter
 
-	tween:(txt, delay)->
+	tween:(txt, delay, init)->
 		@_delay = delay
 		@txt = txt
+		@txt.text = "" if init is true
 		@txt.text += @letter
-		@txt_letters = txt.text.split("")
+		@txt_letters = @txt.text.split("")
 		@last_pos = @txt_letters.length - 1
 		@txt_letters[@last_pos] = @letter
 
