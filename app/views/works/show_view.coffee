@@ -7,7 +7,7 @@ class ShowView extends app.views.AppView
 
 	set_triggers:->
 		@mark_menu "bt_work"
-		@el.find( "a" ).click ( ev )=>
+		@el.find( ".back" ).click ( ev )=>
 			@navigate $( ev.currentTarget ).attr "href"
 			ev.preventDefault() unless @the.config.no_push_state
 
