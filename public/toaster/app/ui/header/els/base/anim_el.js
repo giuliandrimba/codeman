@@ -29,7 +29,9 @@
         var spritesheet;
         spritesheet = new SpriteSheet(data);
         _this.initialize(spritesheet);
-        return _this.ready.dispatch();
+        return setTimeout(function() {
+          return _this.ready.dispatch();
+        }, 1000);
       });
     };
 

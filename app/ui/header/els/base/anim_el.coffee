@@ -17,7 +17,9 @@ class AnimEl extends BitmapAnimation
 		load_json @url, (data)=>
 			spritesheet = new SpriteSheet data
 			@initialize spritesheet
-			@ready.dispatch()
+			setTimeout( =>
+				@ready.dispatch()
+			, 1000)
 
 	_done:()->
 		@stage.update()
