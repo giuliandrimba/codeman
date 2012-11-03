@@ -33,6 +33,7 @@ class IndexView extends app.views.AppView
 
 
 	in:(done)=>
+		@preloader.show()
 		@footer = $("footer")
 		@header = new Header "header_canvas"
 		@header.ready.add @on_header_ready

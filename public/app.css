@@ -343,18 +343,25 @@ header {
   position: relative;
 }
 header .quote {
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
   position: absolute;
   color: #fff;
   font-family: "Arial";
   font-size: 12px;
   width: 125px;
   top: 20px;
-  right: 109px;
+  right: 7px;
   display: block;
   line-height: 14px;
 }
+header .quote p {
+  color: #fff;
+}
 header .quote .author {
   font-size: 10px;
+  margin-top: 10px;
 }
 header #menu {
   width: 996px;

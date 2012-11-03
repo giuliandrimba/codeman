@@ -50,6 +50,7 @@
 
     IndexView.prototype["in"] = function(done) {
       var _this = this;
+      this.preloader.show();
       this.footer = $("footer");
       this.header = new Header("header_canvas");
       this.header.ready.add(this.on_header_ready);

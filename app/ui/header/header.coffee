@@ -37,7 +37,7 @@ class Header
 		@intro.add new Line 823, 0, 130, "#000", false
 		@intro.add new Line 210, 57, 150, "#ee1d23"
 		@intro.add new Line 266, 95, 50, "#ee1d23"
-		@intro.add new AnimText "011100110110010101111000", "#e54c6b", 370, 175
+		@intro.add new AnimText "011100110110010101111000", "#e54c6b", 390, 175
 		@intro.add new AnimText "011011100110111101110111", "#e54c6b", 150, 165
 		@intro.add new AnimText "011001110110100101110100", "#e54c6b", 150, 182
 		@intro.add new AnimText "C:CODEMAN/WEBSITE", "#000", 140, 25
@@ -59,7 +59,10 @@ class Header
 		@intro.ready.add @on_ready
 
 	in:->
-		@intro.run()
+		setTimeout(=>
+			$("#preloader").hide()
+			@intro.run()
+		,2000)
 
 	on_ready:=>
 		@ready.dispatch()
