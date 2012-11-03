@@ -11,6 +11,7 @@
     }
 
     IndexView.prototype.before_in = function() {
+      _gaq.push(["_trackEvent", "contact", "enter", "contact"]);
       this.mark_menu("bt_contact");
       return this.el.css({
         opacity: 0

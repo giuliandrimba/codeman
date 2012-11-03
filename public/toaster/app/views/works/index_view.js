@@ -12,6 +12,7 @@
 
     IndexView.prototype.before_in = function() {
       var rndTop, thumb, _i, _len, _ref;
+      _gaq.push(["_trackEvent", "works", "enter", "works"]);
       this.thumbs = $(this.el).find(".thumb_list li .project_thumb");
       this._total_thumbs = this.thumbs.length;
       this._thumbs_loaded = 0;

@@ -3,6 +3,7 @@
 class IndexView extends app.views.AppView
 
 	before_in:->
+		_gaq.push ["_trackEvent", "about", "enter", "about"]
 		@mark_menu "bt_about"
 		@el.find(".description").html(@data.data.description)
 		@el.css({opacity:0})

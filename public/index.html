@@ -13,7 +13,27 @@
 		<script src="/scripts/vendors/jquery.vimeoplayer.js" type="text/javascript"></script>
 		<script src="/scripts/vendors/jquery.drimba.gallery.js" type="text/javascript"></script>
 		<script src="/scripts/vendors/jquery.tinyscrollbar.min.js" type="text/javascript"></script>
+		<script src="/scripts/vendors/iealert.min.js" type="text/javascript"></script>
 		<link href="/app.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript">
+
+			$(document).ready(function()
+			{
+				$("body").iealert();
+			})
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36047586-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
 	</head>
 	<body>
 	</body>

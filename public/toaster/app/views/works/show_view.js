@@ -25,6 +25,7 @@
 
     ShowView.prototype.before_in = function() {
       var gallery;
+      _gaq.push(["_trackEvent", "works", "enter", "work_" + this.data.data.id]);
       gallery = new Gallery($(".works_gallery"), this.data.data.id);
       return this.el.css({
         opacity: 0

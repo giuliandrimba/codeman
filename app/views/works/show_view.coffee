@@ -11,6 +11,7 @@ class ShowView extends app.views.AppView
 			ev.preventDefault() unless @the.config.no_push_state
 
 	before_in:->
+		_gaq.push ["_trackEvent", "works", "enter", "work_#{@data.data.id}"]
 		gallery = new Gallery $(".works_gallery"), @data.data.id
 		@el.css({opacity:0})
 

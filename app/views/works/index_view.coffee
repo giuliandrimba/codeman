@@ -3,6 +3,7 @@
 class IndexView extends app.views.AppView
 
 	before_in:->
+		_gaq.push ["_trackEvent", "works", "enter", "works"]
 		@thumbs = $(@el).find(".thumb_list li .project_thumb")
 		@_total_thumbs = @thumbs.length
 		@_thumbs_loaded = 0
