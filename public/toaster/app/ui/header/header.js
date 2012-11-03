@@ -74,7 +74,7 @@
       return setTimeout(function() {
         $("#preloader").hide();
         return _this.intro.run();
-      }, 2000);
+      }, 3000);
     };
 
     Header.prototype.on_ready = function() {

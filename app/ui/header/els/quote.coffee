@@ -3,8 +3,10 @@
 class Quote extends app.ui.header.els.base.BitmapEl
 
 	url:"/images/header/quote-flag.png"
+	phrases : []
 
 	constructor:->
+		@phrases = []
 		super()
 
 	in:()->
@@ -13,21 +15,32 @@ class Quote extends app.ui.header.els.base.BitmapEl
 		@x = 870
 		@y = -300
 
-		TweenLite.to(@, 3.5, {alpha:1,y:0, ease:Quart.easeInOut, delay:2, onComplete:@_showQuote});
+		TweenLite.to @, 3.5, {alpha:1,y:0, ease:Quart.easeInOut, delay:2, onComplete:@_load_quote}
+
+		setInterval(=>
+			@_show_quote()
+		,30000)
 
 		@_done()
 
-	_showQuote:=>
+	_show_quote:=>
+		TweenLite.to $(".quote"), 1, {css:{opacity:0},ease:Quart.easeInOut, onComplete: @_get_quote}
+
+	_load_quote:=>
 		$.ajax(
 			url: "data/quotes.json"
 			cache: false,
 			dataType:"json",
 			type:"GET",
-			success:(data)->
-				rndPhrase = Math.floor(Math.random() * data.length)
-				phrase = data[rndPhrase]
-				$(".quote").find(".author").text("- " + phrase.author)
-				$(".quote").find(".text").text("" + phrase.text + "")
-				TweenLite.to($(".quote"), 1, {css:{opacity:1},ease:Quart.easeInOut});
+			success:(data)=>
+				@phrases = data
+				@_get_quote()
 			)
+
+	_get_quote:=>
+		rndPhrase = Math.floor(Math.random() * @phrases.length)
+		phrase = @phrases[rndPhrase]
+		$(".quote").find(".author").text "- #{phrase.author}"
+		$(".quote").find(".text").text phrase.text
+		TweenLite.to $(".quote"), 1, {css:{opacity:1},ease:Quart.easeInOut}
 

@@ -62,7 +62,7 @@ class Header
 		setTimeout(=>
 			$("#preloader").hide()
 			@intro.run()
-		,2000)
+		,3000)
 
 	on_ready:=>
 		@ready.dispatch()

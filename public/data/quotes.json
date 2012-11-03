@@ -10,5 +10,53 @@
 	{
 		"text":"As a rule, software systems do not work well until they have been used, and have failed repeatedly, in real applications.",
 		"author":"Dave Parnas"
+	},
+	{
+		"text":"First, solve the problem. Then, write the code.",
+		"author":"Anonymous"
+	},
+	{
+		"text":"Shut up and code",
+		"author":"Anonymous"
+	},
+	{
+		"text":"A SQL query walks into a bar. He approaches two tables and says, 'Mind if I join you?'",
+		"author":"Anonymous"
+	},
+	{
+		"text":"What we have to learn to do, we learn by doing.",
+		"author":"Aristotle"
+	},
+	{
+		"text":"The computers do what you tell them to do, not what you want them to do.",
+		"author":"Alexander Atanasov"
+	},
+	{
+		"text":"Prototyping will reduce development time & cost by 40%.",
+		"author":"Larry Bernstein"
+	},
+	{
+		"text":"Documentation is like sex; when it's good, it's very, very good, and when it's bad, it's better than nothing.",
+		"author":"Dick Brandon"
+	},
+	{
+		"text":"The only way to stop bugs is to kill the tester.",
+		"author":"Assaad Chalhoub"
+	},
+	{
+		"text":"When I wrote this, only God and I understood what I was doing. Now, God only knows",
+		"author":"Anonymous"
+	},
+	{
+		"text":"The details are details. They make the product.",
+		"author":"Charles Eames"
+	},
+	{
+		"text":"When you feel the need to write a comment, first try to refactor the code so that any comment becomes superflouus.",
+		"author":"Martin Fowler"
+	},
+	{
+		"text":"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+		"author":"Martin Golding"
 	}
 ]
