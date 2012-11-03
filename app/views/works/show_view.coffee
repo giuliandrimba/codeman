@@ -15,9 +15,10 @@ class ShowView extends app.views.AppView
 		_gaq.push ["_trackEvent", "works", "enter", "work_#{@data.data.id}"]
 		gallery = new Gallery $(".works_gallery"), @data.data.id
 		@el.css({opacity:0})
-		@el.find(".description").html @data.data.description
 
 	in:(done)->
+		@el.find(".description").html @data.data.description
+		@update_scroll()
 		super()
 		@before_in()
 		TweenLite.to @el, 0.5, {css:{opacity:1}, ease:Quad.easeOut, onComplete:=>

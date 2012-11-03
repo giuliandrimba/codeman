@@ -28,14 +28,15 @@
       var gallery;
       _gaq.push(["_trackEvent", "works", "enter", "work_" + this.data.data.id]);
       gallery = new Gallery($(".works_gallery"), this.data.data.id);
-      this.el.css({
+      return this.el.css({
         opacity: 0
       });
-      return this.el.find(".description").html(this.data.data.description);
     };
 
     ShowView.prototype["in"] = function(done) {
       var _this = this;
+      this.el.find(".description").html(this.data.data.description);
+      this.update_scroll();
       ShowView.__super__["in"].call(this);
       this.before_in();
       return TweenLite.to(this.el, 0.5, {
