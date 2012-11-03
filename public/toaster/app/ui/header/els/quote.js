@@ -67,15 +67,17 @@
     Quote.prototype._get_quote = function() {
       var phrase, rndPhrase;
       rndPhrase = Math.floor(Math.random() * this.phrases.length);
-      phrase = this.phrases[rndPhrase];
-      $(".quote").find(".author").text("- " + phrase.author);
-      $(".quote").find(".text").text(phrase.text);
-      return TweenLite.to($(".quote"), 1, {
-        css: {
-          opacity: 1
-        },
-        ease: Quart.easeInOut
-      });
+      phrase = this.phrases[0];
+      if (phrase) {
+        $(".quote").find(".author").text("- " + phrase.author);
+        $(".quote").find(".text").text(phrase.text);
+        return TweenLite.to($(".quote"), 1, {
+          css: {
+            opacity: 1
+          },
+          ease: Quart.easeInOut
+        });
+      }
     };
 
     return Quote;

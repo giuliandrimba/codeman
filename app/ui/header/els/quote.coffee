@@ -39,8 +39,9 @@ class Quote extends app.ui.header.els.base.BitmapEl
 
 	_get_quote:=>
 		rndPhrase = Math.floor(Math.random() * @phrases.length)
-		phrase = @phrases[rndPhrase]
-		$(".quote").find(".author").text "- #{phrase.author}"
-		$(".quote").find(".text").text phrase.text
-		TweenLite.to $(".quote"), 1, {css:{opacity:1},ease:Quart.easeInOut}
+		phrase = @phrases[0]
+		if(phrase)
+			$(".quote").find(".author").text "- #{phrase.author}"
+			$(".quote").find(".text").text phrase.text
+			TweenLite.to $(".quote"), 1, {css:{opacity:1},ease:Quart.easeInOut}
 
