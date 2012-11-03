@@ -6,6 +6,7 @@ class ShowView extends app.views.AppView
 	Gallery = app.ui.gallery.Gallery
 
 	set_triggers:->
+		@mark_menu "bt_work"
 		@el.find( "a" ).click ( ev )=>
 			@navigate $( ev.currentTarget ).attr "href"
 			ev.preventDefault() unless @the.config.no_push_state
@@ -14,6 +15,7 @@ class ShowView extends app.views.AppView
 		_gaq.push ["_trackEvent", "works", "enter", "work_#{@data.data.id}"]
 		gallery = new Gallery $(".works_gallery"), @data.data.id
 		@el.css({opacity:0})
+		@el.find(".description").html @data.data.description
 
 	in:(done)->
 		super()

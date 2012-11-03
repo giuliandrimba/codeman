@@ -15,6 +15,7 @@
 
     ShowView.prototype.set_triggers = function() {
       var _this = this;
+      this.mark_menu("bt_work");
       return this.el.find("a").click(function(ev) {
         _this.navigate($(ev.currentTarget).attr("href"));
         if (!_this.the.config.no_push_state) {
@@ -27,9 +28,10 @@
       var gallery;
       _gaq.push(["_trackEvent", "works", "enter", "work_" + this.data.data.id]);
       gallery = new Gallery($(".works_gallery"), this.data.data.id);
-      return this.el.css({
+      this.el.css({
         opacity: 0
       });
+      return this.el.find(".description").html(this.data.data.description);
     };
 
     ShowView.prototype["in"] = function(done) {
