@@ -15,6 +15,7 @@ class IndexView extends app.views.AppView
 		@preloader.show()
 
 	set_triggers:->
+		@mark_menu "bt_work"
 		@el.find( "a" ).click ( ev )=>
 			@navigate $( ev.currentTarget ).attr "href"
 			ev.preventDefault() unless @the.config.no_push_state

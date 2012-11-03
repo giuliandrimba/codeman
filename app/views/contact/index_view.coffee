@@ -3,6 +3,7 @@
 class IndexView extends app.views.AppView
 
 	before_in:->
+		@mark_menu "bt_contact"
 		@el.css({opacity:0})
 
 	in:(done)->

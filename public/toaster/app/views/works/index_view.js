@@ -29,6 +29,7 @@
 
     IndexView.prototype.set_triggers = function() {
       var _this = this;
+      this.mark_menu("bt_work");
       return this.el.find("a").click(function(ev) {
         _this.navigate($(ev.currentTarget).attr("href"));
         if (!_this.the.config.no_push_state) {

@@ -15,6 +15,11 @@
       }
     };
 
+    AppView.prototype.mark_menu = function(id) {
+      $("#menu").find("a").removeClass("selected");
+      return $("#" + id).addClass("selected");
+    };
+
     AppView.prototype.update_scroll = function() {
       $(".wrapper").find(".viewport").height(window.height());
       return $(".wrapper").tinyscrollbar_update(0);

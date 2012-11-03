@@ -11,6 +11,7 @@
     }
 
     IndexView.prototype.before_in = function() {
+      this.mark_menu("bt_about");
       this.el.find(".description").html(this.data.data.description);
       return this.el.css({
         opacity: 0

@@ -8,6 +8,10 @@ class AppView extends theoricus.mvc.View
 		hide:->
 			$("#preloader").css "display", "none"
 
+	mark_menu:(id)->
+		$("#menu").find("a").removeClass "selected"
+		$("##{id}").addClass "selected"
+
 	update_scroll:->
 		$(".wrapper").find(".viewport").height(window.height())
 		$(".wrapper").tinyscrollbar_update(0)

@@ -403,8 +403,9 @@ header #menu ul li a {
   color: #000;
   text-decoration: none;
 }
-header #menu ul li a:hover {
-  color: #000;
+header #menu ul li a:hover,
+header #menu ul li a.selected {
+  color: #ee1c24;
 }
 footer {
   height: 25px;
