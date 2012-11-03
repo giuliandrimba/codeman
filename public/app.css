@@ -13,6 +13,15 @@
   float: left;
   width: 650px;
 }
+#about .bt_social_link {
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+}
+#about .title {
+  font-size: 25px;
+}
 #about p {
   font-family: 'MetaBookRoman', sans-serif;
 }
@@ -32,6 +41,13 @@
   margin-bottom: 15px;
   font-family: 'MetaRomanBold';
 }
+#about h3 {
+  font-family: 'MetaRomanBold';
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
 #about ul li {
   margin-bottom: 5px;
   color: #000;
@@ -42,6 +58,9 @@
 }
 #contact div.img_contact {
   float: left;
+  width: 274px;
+  height: 394px;
+  display: block;
 }
 #contact div.description {
   float: left;
@@ -497,7 +516,7 @@ footer .wrapper_footer p {
   font-family: 'MetaBookItalic';
   margin-right: 25px;
 }
-.works_inner .head p {
+.works_inner .head a.back {
   float: left;
   font-family: 'MetaBookItalic';
   font-size: 14px;

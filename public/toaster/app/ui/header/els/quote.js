@@ -38,7 +38,7 @@
         success: function(data) {
           var phrase, rndPhrase;
           rndPhrase = Math.floor(Math.random() * data.length);
-          phrase = data[rndPhrase - 1];
+          phrase = data[rndPhrase];
           $(".quote").find(".author").text("- " + phrase.author);
           $(".quote").find(".text").text("" + phrase.text + "");
           return TweenLite.to($(".quote"), 1, {

@@ -25,7 +25,7 @@ class Quote extends app.ui.header.els.base.BitmapEl
 			type:"GET",
 			success:(data)->
 				rndPhrase = Math.floor(Math.random() * data.length)
-				phrase = data[rndPhrase - 1]
+				phrase = data[rndPhrase]
 				$(".quote").find(".author").text("- " + phrase.author)
 				$(".quote").find(".text").text("" + phrase.text + "")
 				TweenLite.to($(".quote"), 1, {css:{opacity:1},ease:Quart.easeInOut});

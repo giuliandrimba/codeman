@@ -3,7 +3,7 @@
 		img(src="/images/about.png")
 
 	.about_desc
-		h3 Giulian Drimba - Interactive Developer
+		h3.title Giulian Drimba - Interactive Developer
 		.description
 
 		h2 Skills
@@ -14,5 +14,25 @@
 					p 
 						strong #{data.skills[i].name}: 
 						#{data.skills[i].level}
+
+		h3 Find me in
+		a(href='http://www.linkedin.com/in/giuliandrimba', target='_blank', class='bt_social_link') Linkedin
+		a(href='https://twitter.com/giuliandrimba', target='_blank', class='bt_social_link') Twitter
+		a(href='http://grooveshark.com/#!/giulian/playlists', target='_blank', class='bt_social_link') Grooveshark
+
+		.clear
+
+		h3 About this site
+		p
+			| This site is an experimental project, it was developed using the 
+			a(href='https://github.com/serpentem/theoricus', target='_blank') Theoricus Framework
+			|  , wich uses  
+			a(href="http://learnboost.github.com/stylus/", target='_blank') Stylus
+			|  for CSS, 
+			a(href="http://coffeescript.org/", target='_blank') Coffeescript
+			|  for Javascript and 
+			a(href="http://jade-lang.com/", target='_blank') Jade
+			|  for HTML.
+
 
 	.clear

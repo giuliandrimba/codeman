@@ -5,6 +5,11 @@ class ShowView extends app.views.AppView
 
 	Gallery = app.ui.gallery.Gallery
 
+	set_triggers:->
+		@el.find( "a" ).click ( ev )=>
+			@navigate $( ev.currentTarget ).attr "href"
+			ev.preventDefault() unless @the.config.no_push_state
+
 	before_in:->
 		gallery = new Gallery $(".works_gallery"), @data.data.id
 		@el.css({opacity:0})
