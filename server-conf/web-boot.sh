@@ -6,7 +6,7 @@ sed -i 's/^MaxClients 1/MaxClients 8/' /app/apache/conf/httpd.conf
 for var in `env|cut -f1 -d=`; do
   echo "PassEnv $var" >> /app/apache/conf/httpd.conf;
 done
-echo "Include /app/www/conf/httpd/*.conf" >> /app/apache/conf/httpd.conf
+echo "Include /app/www/server-conf/httpd/*.conf" >> /app/apache/conf/httpd.conf
 touch /app/apache/logs/error_log
 touch /app/apache/logs/access_log
 tail -F /app/apache/logs/error_log &
