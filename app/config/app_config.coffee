@@ -1,5 +1,5 @@
 class AppConfig
-	@debug:false
+	@debug:true
 
 unless app.config.AppConfig.debug
 	console.log = ->

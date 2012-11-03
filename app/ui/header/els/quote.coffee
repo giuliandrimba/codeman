@@ -17,10 +17,6 @@ class Quote extends app.ui.header.els.base.BitmapEl
 
 		TweenLite.to @, 3.5, {alpha:1,y:0, ease:Quart.easeInOut, delay:2, onComplete:@_load_quote}
 
-		setInterval(=>
-			@_show_quote()
-		,30000)
-
 		@_done()
 
 	_show_quote:=>
@@ -28,18 +24,21 @@ class Quote extends app.ui.header.els.base.BitmapEl
 
 	_load_quote:=>
 		$.ajax(
-			url: "data/quotes.json"
+			url: "/data/quotes.json"
 			cache: false,
 			dataType:"json",
 			type:"GET",
 			success:(data)=>
 				@phrases = data
 				@_get_quote()
+				setInterval(=>
+					@_show_quote()
+				,30000)
 			)
 
 	_get_quote:=>
 		rndPhrase = Math.floor(Math.random() * @phrases.length)
-		phrase = @phrases[0]
+		phrase = @phrases[rndPhrase]
 		if(phrase)
 			$(".quote").find(".author").text "- #{phrase.author}"
 			$(".quote").find(".text").text phrase.text

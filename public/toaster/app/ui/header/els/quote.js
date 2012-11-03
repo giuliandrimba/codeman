@@ -22,7 +22,6 @@
     }
 
     Quote.prototype["in"] = function() {
-      var _this = this;
       this.stage.addChild(this);
       this.alpha = 0;
       this.x = 870;
@@ -34,9 +33,6 @@
         delay: 2,
         onComplete: this._load_quote
       });
-      setInterval(function() {
-        return _this._show_quote();
-      }, 30000);
       return this._done();
     };
 
@@ -53,13 +49,16 @@
     Quote.prototype._load_quote = function() {
       var _this = this;
       return $.ajax({
-        url: "data/quotes.json",
+        url: "/data/quotes.json",
         cache: false,
         dataType: "json",
         type: "GET",
         success: function(data) {
           _this.phrases = data;
-          return _this._get_quote();
+          _this._get_quote();
+          return setInterval(function() {
+            return _this._show_quote();
+          }, 30000);
         }
       });
     };
@@ -67,7 +66,7 @@
     Quote.prototype._get_quote = function() {
       var phrase, rndPhrase;
       rndPhrase = Math.floor(Math.random() * this.phrases.length);
-      phrase = this.phrases[0];
+      phrase = this.phrases[rndPhrase];
       if (phrase) {
         $(".quote").find(".author").text("- " + phrase.author);
         $(".quote").find(".text").text(phrase.text);

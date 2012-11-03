@@ -4,7 +4,7 @@
 
     function AppConfig() {}
 
-    AppConfig.debug = false;
+    AppConfig.debug = true;
 
     return AppConfig;
 
