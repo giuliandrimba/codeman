@@ -21,7 +21,7 @@ class AppView extends theoricus.mvc.View
 		window.preloader = @preloader
 
 	in:->
-
+		document.title = "Codeman - Portfolio of Giulian Drimba - Interactive Developer"
 		@content = $(".wrapper").find(".content")
 		@page_content = $("#page_content");
 

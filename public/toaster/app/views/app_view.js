@@ -32,6 +32,7 @@
 
     AppView.prototype["in"] = function() {
       var content_height, footer_height;
+      document.title = "Codeman - Portfolio of Giulian Drimba - Interactive Developer";
       this.content = $(".wrapper").find(".content");
       this.page_content = $("#page_content");
       this.footer = $("footer");
