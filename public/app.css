@@ -164,10 +164,6 @@ sub,
 sup,
 tt,
 var,
-b,
-u,
-i,
-center,
 dl,
 dt,
 dd,
@@ -185,68 +181,40 @@ tfoot,
 thead,
 tr,
 th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+td {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
 }
 body {
   line-height: 1;
+  color: #000;
+  background: #fff;
 }
 ol,
 ul {
   list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
 }
 a:hover {
   text-decoration: none;
@@ -293,6 +261,8 @@ div.project_thumb {
   top: 0;
   left: 0;
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
 }
 div.thumb_holder {
   width: 236px;
@@ -302,6 +272,9 @@ div.thumb_over {
   width: 236px;
   height: 236px;
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   position: absolute;
   z-index: 1;
@@ -311,6 +284,9 @@ div.thumb_over .bg {
   width: 236px;
   height: 236px;
   opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: alpha(opacity=50);
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   position: absolute;
   z-index: 1;
@@ -324,19 +300,42 @@ div.thumb_over p {
   text-align: center;
   top: 50%;
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
 }
 div.thumb_over:hover {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -ms-transition-property: opacity;
   transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
   transition-duration: 0.5s;
   opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 div.thumb_over:hover p {
+  -webkit-transition-property: opacity, margin-top;
+  -moz-transition-property: opacity, margin-top;
+  -o-transition-property: opacity, margin-top;
+  -ms-transition-property: opacity, margin-top;
   transition-property: opacity, margin-top;
+  -webkit-transition-duration: 0.5s, 0.5s;
+  -moz-transition-duration: 0.5s, 0.5s;
+  -o-transition-duration: 0.5s, 0.5s;
+  -ms-transition-duration: 0.5s, 0.5s;
   transition-duration: 0.5s, 0.5s;
   opacity: 1;
+  -ms-filter: none;
+  filter: none;
   margin-top: -15px;
 }
 img.thumb_img {
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 ul.thumb_list li {
@@ -365,6 +364,8 @@ header {
 }
 header .quote {
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
   position: absolute;
   color: #fff;
   font-family: "Arial";
@@ -388,6 +389,8 @@ header #menu {
   border-top: 1px solid #9c9c9c;
   border-bottom: 1px solid #9c9c9c;
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
 }
 header #menu ul li {
   float: left;
@@ -414,6 +417,8 @@ footer {
   bottom: 0;
   clear: both;
   opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
 }
 footer .wrapper_footer {
   width: 1020px;
@@ -458,9 +463,12 @@ footer .wrapper_footer p {
   top: 5px;
   right: 5px;
   width: 8px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
   z-index: 10;
   opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  filter: alpha(opacity=70);
 }
 .wrapper .track {
   background: url("../images/bg-scrollbar-trackend-y.png") no-repeat 0 100%;
@@ -468,6 +476,7 @@ footer .wrapper_footer p {
   width: 8px;
   position: relative;
   padding: 0 1px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 .wrapper .thumb {
@@ -478,6 +487,7 @@ footer .wrapper_footer p {
   overflow: hidden;
   position: absolute;
   top: 0;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 .wrapper .thumb .end {
