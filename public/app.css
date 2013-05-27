@@ -581,8 +581,6 @@ footer .wrapper_footer p {
   right: 6px;
 }
 .works_inner .works_gallery .arrow:hover {
-  transition-property: background-position;
-  transition-duration: 0.5s;
   background-position: -27px;
 }
 .works_inner .works_gallery .arrow img {
