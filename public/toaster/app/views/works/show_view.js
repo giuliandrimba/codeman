@@ -43,7 +43,7 @@
         css: {
           opacity: 1
         },
-        ease: Quad.easeOut,
+        ease: Expo.easeOut,
         onComplete: function() {
           return typeof done === "function" ? done() : void 0;
         }
@@ -56,7 +56,7 @@
         css: {
           opacity: 0
         },
-        ease: Quad.easeOut,
+        ease: Expo.easeOut,
         onComplete: function() {
           return typeof done === "function" ? done() : void 0;
         }

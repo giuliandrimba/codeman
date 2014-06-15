@@ -21,11 +21,11 @@ class ShowView extends app.views.AppView
 		@update_scroll()
 		super()
 		@before_in()
-		TweenLite.to @el, 0.5, {css:{opacity:1}, ease:Quad.easeOut, onComplete:=>
+		TweenLite.to @el, 0.5, {css:{opacity:1}, ease:Expo.easeOut, onComplete:=>
 			done?()
 		}
 
 	out:(done)->
-		TweenLite.to @el, 0.5, {css:{opacity:0}, ease:Quad.easeOut, onComplete:=>
+		TweenLite.to @el, 0.5, {css:{opacity:0}, ease:Expo.easeOut, onComplete:=>
 			done?()
 		}
